@@ -912,7 +912,7 @@ h3 {
 
 .store-lead-card {
   margin: 0 auto 34px;
-  max-width: 920px;
+  max-width: 780px;
 }
 
 .store-lead-card .store-lead-copy {
@@ -933,7 +933,7 @@ h3 {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12);
-  padding: clamp(28px, 4vw, 42px);
+  padding: clamp(28px, 4vw, 40px);
 }
 
 .store-lead-copy .btn {
@@ -961,7 +961,7 @@ h3 {
   color: rgba(255, 255, 255, 0.76);
   line-height: 1.7;
   margin: 0 0 28px;
-  max-width: 50ch;
+  max-width: 36ch;
 }
 
 .store-lead-media {
