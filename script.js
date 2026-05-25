@@ -15,8 +15,69 @@ const productModalSpecs = document.querySelector("[data-product-modal-specs]");
 const productModalDescription = document.querySelector("[data-product-modal-description]");
 const productModalClose = document.querySelectorAll("[data-product-close]");
 const productModalAction = productModal?.querySelector(".btn.btn-primary");
+const galleryGrid = document.querySelector("[data-gallery-grid]");
+const galleryTitle = document.querySelector("[data-gallery-title]");
+const galleryDescription = document.querySelector("[data-gallery-description]");
 let lastProductTrigger = null;
 let activeProductCard = null;
+
+const galleryCollections = {
+  residenciais: {
+    title: "Projetos residenciais",
+    description: "Ambientes residenciais executados pela BLL com diferentes leituras de uso, composicao e acabamento.",
+    folder: "RESIDENCIAIS",
+    files: [
+      "RESIDENCIAL 1.JPEG",
+      "RESIDENCIAL 2.JPEG",
+      "RESIDENCIAL 3 (1).JPEG",
+      "RESIDENCIAL 3 (1).jpg",
+      "RESIDENCIAL 3 (2).JPEG",
+      "RESIDENCIAL 3 (2).JPG",
+      "RESIDENCIAL 3 (3).JPEG",
+      "RESIDENCIAL 3 (3).JPG",
+      "RESIDENCIAL 3 (4).JPEG",
+      "RESIDENCIAL 3 (4).jpg",
+      "RESIDENCIAL 3 (5).jpeg",
+      "RESIDENCIAL 3 (5).jpg",
+      "RESIDENCIAL 3 (6).JPEG"
+    ]
+  },
+  especiais: {
+    title: "Ambientes especiais",
+    description: "Projetos com leitura mais autoral, pensados para destacar identidade, materialidade e experiencia de uso.",
+    folder: "AMBIENTES ESPECIAIS",
+    files: [
+      "IMG_0063.JPG",
+      "IMG_0356.JPG",
+      "IMG_0661.HEIC",
+      "IMG_0796.JPG",
+      "IMG_6173.JPG",
+      "IMG_6625.JPEG"
+    ]
+  },
+  corporativos: {
+    title: "Ambientes corporativos",
+    description: "Espacos corporativos desenvolvidos para equilibrar imagem profissional, funcionalidade e acabamento.",
+    folder: "AMBIENTES CORPORATIVOS",
+    files: [
+      "IMG_0301.HEIC",
+      "IMG_3682.JPEG",
+      "IMG_4579.JPEG",
+      "IMG_4581.JPEG",
+      "IMG_4774.JPEG",
+      "IMG_4776.JPEG",
+      "IMG_5984.JPG",
+      "IMG_6174.JPEG",
+      "IMG_6189.JPEG",
+      "IMG_6654.JPEG",
+      "IMG_6655.JPEG",
+      "IMG_6656.JPEG",
+      "IMG_6660.JPEG",
+      "IMG_6661.JPEG",
+      "IMG_6664.JPEG"
+    ]
+  }
+};
 
 const staggerGroups = [
   ".project-grid",
@@ -55,6 +116,33 @@ if (menu && menuToggle) {
 
 window.addEventListener("scroll", updateHeader, { passive: true });
 updateHeader();
+
+if (galleryGrid && galleryTitle && galleryDescription) {
+  const params = new URLSearchParams(window.location.search);
+  const categoryKey = params.get("categoria") || "residenciais";
+  const category = galleryCollections[categoryKey] || galleryCollections.residenciais;
+
+  galleryTitle.textContent = category.title;
+  galleryDescription.textContent = category.description;
+
+  galleryGrid.innerHTML = "";
+
+  category.files.forEach((fileName, index) => {
+    const figure = document.createElement("figure");
+    figure.className = "gallery-item reveal is-visible";
+
+    const image = document.createElement("img");
+    image.src = `assets/IMAGENS/${category.folder}/${encodeURIComponent(fileName)}`;
+    image.alt = `${category.title} - imagem ${index + 1}`;
+    image.loading = index < 4 ? "eager" : "lazy";
+
+    const caption = document.createElement("figcaption");
+    caption.textContent = `${category.title} ${index + 1}`;
+
+    figure.append(image, caption);
+    galleryGrid.appendChild(figure);
+  });
+}
 
 partnerLogos.forEach((logo) => {
   const label = logo.querySelector("span");
