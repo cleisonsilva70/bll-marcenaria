@@ -83,8 +83,15 @@ a {
 .brand {
   align-items: center;
   display: inline-flex;
-  gap: 12px;
+  gap: 0;
   min-width: max-content;
+}
+
+.brand-logo {
+  display: block;
+  height: 58px;
+  object-fit: contain;
+  width: auto;
 }
 
 .brand-mark {
@@ -1969,12 +1976,7 @@ h3 {
   max-width: 1360px;
 }
 
-.footer-brand .brand-mark {
-  background: var(--gold);
-  color: var(--wine-dark);
-}
-
-.footer-brand .brand-text,
+.footer-brand .brand-logo,
 .site-footer h3,
 .footer h3 {
   color: #fff;
@@ -2305,17 +2307,8 @@ h3 {
     background: var(--wine);
   }
 
-  .brand-mark {
-    background: #fff;
-    color: var(--wine);
-    height: 38px;
-    width: 38px;
-  }
-
-  .brand-text {
-    color: #fff;
-    font-size: 15px;
-    letter-spacing: 0.05em;
+  .brand-logo {
+    height: 46px;
   }
 
   .menu-toggle {
@@ -2765,8 +2758,8 @@ h3 {
     font-size: 32px;
   }
 
-  .brand-text {
-    font-size: 13px;
+  .brand-logo {
+    height: 40px;
   }
 
   .hero {
