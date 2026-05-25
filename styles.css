@@ -1127,9 +1127,9 @@ h3 {
 }
 
 .gallery-item img {
-  aspect-ratio: 4 / 3;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  max-height: 780px;
+  object-fit: contain;
   width: 100%;
 }
 
@@ -2855,6 +2855,10 @@ h3 {
   .gallery-grid {
     gap: 18px;
     grid-template-columns: 1fr;
+  }
+
+  .gallery-item img {
+    max-height: none;
   }
 }
 
