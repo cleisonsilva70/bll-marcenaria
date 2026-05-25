@@ -27,19 +27,18 @@ const galleryCollections = {
     description: "Ambientes residenciais executados pela BLL com diferentes leituras de uso, composicao e acabamento.",
     folder: "RESIDENCIAIS",
     files: [
-      "RESIDENCIAL 3 (4).JPEG",
-      "RESIDENCIAL 3 (3).JPEG",
-      "RESIDENCIAL 1.JPEG",
-      "RESIDENCIAL 3 (2).JPEG",
-      "RESIDENCIAL 3.JPEG",
-      "RESIDENCIAL 3 (2).JPG",
-      "RESIDENCIAL 3 (3).JPG",
-      "RESIDENCIAL 3 (6).JPEG",
-      "RESIDENCIAL 3 (1).JPEG",
-      "RESIDENCIAL 3 (5).jpeg",
-      "RESIDENCIAL 3 (5).jpg",
-      "RESIDENCIAL 3 (1).jpg",
-      "RESIDENCIAL 2.jpg"
+      "1.JPEG",
+      "2.JPEG",
+      "3.JPEG",
+      "4.jpg",
+      "5.JPEG",
+      "6.JPG",
+      "7.JPG",
+      "8.jpg",
+      "9.JPEG",
+      "10.JPEG",
+      "11.JPEG",
+      "12.jpg"
     ]
   },
   especiais: {
@@ -47,12 +46,12 @@ const galleryCollections = {
     description: "Projetos com leitura mais autoral, pensados para destacar identidade, materialidade e experiencia de uso.",
     folder: "AMBIENTES ESPECIAIS",
     files: [
-      "IMG_0661.HEIC",
-      "IMG_6625.JPEG",
-      "IMG_0356.JPG",
-      "IMG_0796.JPG",
-      "IMG_0063.JPG",
-      "IMG_6173.JPG"
+      "1.HEIC",
+      "2.JPG",
+      "3.JPG",
+      "4.JPG",
+      "5.JPEG",
+      "6.JPG"
     ]
   },
   corporativos: {
@@ -148,10 +147,7 @@ if (galleryGrid && galleryTitle && galleryDescription) {
       }
     });
 
-    const caption = document.createElement("figcaption");
-    caption.textContent = `${category.title} ${index + 1}`;
-
-    figure.append(image, caption);
+    figure.append(image);
     galleryGrid.appendChild(figure);
   });
 }
