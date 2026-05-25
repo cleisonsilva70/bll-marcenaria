@@ -338,7 +338,7 @@ if (productModal) {
 
     if (title && productModalAction) {
       const message = `Ola, tenho interesse na peca ${title.textContent.trim()} da Loja BLL e gostaria de receber mais detalhes.`;
-      productModalAction.href = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`;
+      productModalAction.href = `https://wa.me/5584991212716?text=${encodeURIComponent(message)}`;
     }
 
     lastProductTrigger = triggerButton || card.querySelector("[data-product-open]");
