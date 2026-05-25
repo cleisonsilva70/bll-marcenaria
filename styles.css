@@ -89,7 +89,7 @@ a {
 
 .brand-logo {
   display: block;
-  height: 58px;
+  height: 66px;
   object-fit: contain;
   width: auto;
 }
@@ -2308,7 +2308,7 @@ h3 {
   }
 
   .brand-logo {
-    height: 46px;
+    height: 52px;
   }
 
   .menu-toggle {
@@ -2759,7 +2759,7 @@ h3 {
   }
 
   .brand-logo {
-    height: 40px;
+    height: 44px;
   }
 
   .hero {
