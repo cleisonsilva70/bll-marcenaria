@@ -27,19 +27,19 @@ const galleryCollections = {
     description: "Ambientes residenciais executados pela BLL com diferentes leituras de uso, composicao e acabamento.",
     folder: "RESIDENCIAIS",
     files: [
-      "RESIDENCIAL 1.JPEG",
-      "RESIDENCIAL 2.JPEG",
-      "RESIDENCIAL 3 (1).JPEG",
-      "RESIDENCIAL 3 (1).jpg",
-      "RESIDENCIAL 3 (2).JPEG",
-      "RESIDENCIAL 3 (2).JPG",
-      "RESIDENCIAL 3 (3).JPEG",
-      "RESIDENCIAL 3 (3).JPG",
       "RESIDENCIAL 3 (4).JPEG",
-      "RESIDENCIAL 3 (4).jpg",
+      "RESIDENCIAL 3 (3).JPEG",
+      "RESIDENCIAL 1.JPEG",
+      "RESIDENCIAL 3 (2).JPEG",
+      "RESIDENCIAL 3.JPEG",
+      "RESIDENCIAL 3 (2).JPG",
+      "RESIDENCIAL 3 (3).JPG",
+      "RESIDENCIAL 3 (6).JPEG",
+      "RESIDENCIAL 3 (1).JPEG",
       "RESIDENCIAL 3 (5).jpeg",
       "RESIDENCIAL 3 (5).jpg",
-      "RESIDENCIAL 3 (6).JPEG"
+      "RESIDENCIAL 3 (1).jpg",
+      "RESIDENCIAL 2.jpg"
     ]
   },
   especiais: {
@@ -47,12 +47,12 @@ const galleryCollections = {
     description: "Projetos com leitura mais autoral, pensados para destacar identidade, materialidade e experiencia de uso.",
     folder: "AMBIENTES ESPECIAIS",
     files: [
-      "IMG_0063.JPG",
-      "IMG_0356.JPG",
       "IMG_0661.HEIC",
+      "IMG_6625.JPEG",
+      "IMG_0356.JPG",
       "IMG_0796.JPG",
-      "IMG_6173.JPG",
-      "IMG_6625.JPEG"
+      "IMG_0063.JPG",
+      "IMG_6173.JPG"
     ]
   },
   corporativos: {
@@ -60,21 +60,21 @@ const galleryCollections = {
     description: "Espacos corporativos desenvolvidos para equilibrar imagem profissional, funcionalidade e acabamento.",
     folder: "AMBIENTES CORPORATIVOS",
     files: [
-      "IMG_0301.HEIC",
-      "IMG_3682.JPEG",
-      "IMG_4579.JPEG",
-      "IMG_4581.JPEG",
-      "IMG_4774.JPEG",
-      "IMG_4776.JPEG",
-      "IMG_5984.JPG",
-      "IMG_6174.JPEG",
-      "IMG_6189.JPEG",
-      "IMG_6654.JPEG",
-      "IMG_6655.JPEG",
-      "IMG_6656.JPEG",
-      "IMG_6660.JPEG",
-      "IMG_6661.JPEG",
-      "IMG_6664.JPEG"
+      "6.JPEG",
+      "7.JPEG",
+      "10.JPEG",
+      "11.JPEG",
+      "12.JPEG",
+      "IMG_6664.JPEG",
+      "8.JPEG",
+      "9.JPEG",
+      "13.JPEG",
+      "5.JPEG",
+      "3.JPEG",
+      "2.JPEG",
+      "4.JPEG",
+      "14.HEIC",
+      "1.JPG"
     ]
   }
 };
