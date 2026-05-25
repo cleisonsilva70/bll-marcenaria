@@ -65,7 +65,7 @@ const galleryCollections = {
       "10.JPEG",
       "11.JPEG",
       "12.JPEG",
-      "IMG_6664.JPEG",
+      "15.JPEG",
       "8.JPEG",
       "9.JPEG",
       "13.JPEG",
