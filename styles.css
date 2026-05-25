@@ -557,36 +557,27 @@ h3 {
   text-align: center;
 }
 
-.before-after-frame {
+.project-media-frame {
   aspect-ratio: 4 / 5.2;
   background: #fff;
-  display: grid;
-  gap: 2px;
-  grid-template-columns: 1fr 1fr;
-  overflow: hidden;
-  position: relative;
-}
-
-.before-after-frame figure {
   margin: 0;
-  min-width: 0;
   overflow: hidden;
   position: relative;
 }
 
-.before-after-frame img {
+.project-media-frame img {
   height: 100%;
   object-fit: cover;
   transition: transform 0.8s ease;
   width: 100%;
 }
 
-.project-card:hover .before-after-frame img,
+.project-card:hover .project-media-frame img,
 .catalog-card:hover img {
   transform: scale(1.03);
 }
 
-.before-after-frame figcaption {
+.project-media-frame figcaption {
   background: var(--wine);
   border-radius: 999px;
   color: #fff;
@@ -598,11 +589,6 @@ h3 {
   position: absolute;
   text-transform: uppercase;
   top: 16px;
-}
-
-.before-after-frame figure:last-child figcaption {
-  background: var(--gold);
-  color: var(--wine-dark);
 }
 
 @media (min-width: 861px) {
