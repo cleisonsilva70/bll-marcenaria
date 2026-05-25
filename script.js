@@ -79,6 +79,11 @@ const galleryCollections = {
   }
 };
 
+const galleryFileCollator = new Intl.Collator("pt-BR", {
+  numeric: true,
+  sensitivity: "base"
+});
+
 const staggerGroups = [
   ".project-grid",
   ".differential-grid",
@@ -127,7 +132,9 @@ if (galleryGrid && galleryTitle && galleryDescription) {
 
   galleryGrid.innerHTML = "";
 
-  category.files.forEach((fileName, index) => {
+  const orderedFiles = [...category.files].sort(galleryFileCollator.compare);
+
+  orderedFiles.forEach((fileName, index) => {
     const figure = document.createElement("figure");
     figure.className = "gallery-item reveal is-visible";
 
