@@ -135,6 +135,11 @@ if (galleryGrid && galleryTitle && galleryDescription) {
     image.src = `assets/IMAGENS/${category.folder}/${encodeURIComponent(fileName)}`;
     image.alt = `${category.title} - imagem ${index + 1}`;
     image.loading = index < 4 ? "eager" : "lazy";
+    image.addEventListener("load", () => {
+      if (image.naturalWidth > image.naturalHeight * 1.18) {
+        figure.classList.add("is-landscape");
+      }
+    });
 
     const caption = document.createElement("figcaption");
     caption.textContent = `${category.title} ${index + 1}`;

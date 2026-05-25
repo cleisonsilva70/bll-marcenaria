@@ -1126,6 +1126,10 @@ h3 {
   overflow: hidden;
 }
 
+.gallery-item.is-landscape {
+  grid-column: span 2;
+}
+
 .gallery-item img {
   height: auto;
   max-height: 780px;
@@ -2855,6 +2859,10 @@ h3 {
   .gallery-grid {
     gap: 18px;
     grid-template-columns: 1fr;
+  }
+
+  .gallery-item.is-landscape {
+    grid-column: auto;
   }
 
   .gallery-item img {
