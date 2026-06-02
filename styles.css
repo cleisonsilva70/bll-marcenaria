@@ -95,7 +95,7 @@ a {
   display: block;
   height: auto;
   object-fit: contain;
-  width: min(145px, 18vw);
+  width: min(132px, 16vw);
 }
 
 .brand-logo-subbrand {
@@ -2424,7 +2424,7 @@ h3 {
   }
 
   .brand-logo {
-    width: min(118px, 34vw);
+    width: min(108px, 31vw);
   }
 
   .brand-logo-subbrand {
@@ -2892,7 +2892,7 @@ h3 {
   }
 
   .brand-logo {
-    width: min(102px, 38vw);
+    width: min(96px, 35vw);
   }
 
   .brand-logo-subbrand {
