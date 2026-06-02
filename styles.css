@@ -1105,6 +1105,38 @@ h3 {
   background: var(--paper);
 }
 
+.catalog-page .main-nav a,
+.catalog-page .main-nav a:hover,
+.catalog-page .catalog-hero-content,
+.catalog-page .catalog-hero-content p,
+.catalog-page .product-hover-panel,
+.catalog-page .product-hover-panel span,
+.catalog-page .product-hover-panel small,
+.catalog-page .btn-dark,
+.catalog-page .site-footer,
+.catalog-page .site-footer h3,
+.catalog-page .site-footer a,
+.catalog-page .site-footer p,
+.catalog-page .footer-bottom {
+  color: #fff;
+}
+
+.catalog-page .main-nav .nav-cta {
+  background: #fff;
+  box-shadow: 0 14px 30px rgba(255, 255, 255, 0.16);
+  color: #111;
+}
+
+.catalog-page .btn-primary {
+  background: #111;
+  box-shadow: 0 18px 34px rgba(17, 17, 17, 0.18);
+  color: #fff;
+}
+
+.catalog-page .btn-primary:hover {
+  background: #222;
+}
+
 .catalog-hero {
   align-items: center;
   background:
