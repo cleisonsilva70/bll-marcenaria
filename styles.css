@@ -94,6 +94,20 @@ a {
   width: min(230px, 28vw);
 }
 
+.brand-logo-subbrand {
+  width: min(290px, 34vw);
+}
+
+.brand-logo-on-dark {
+  filter: brightness(0) invert(1);
+}
+
+.subbrand-logo {
+  display: block;
+  height: auto;
+  object-fit: contain;
+}
+
 .brand-mark {
   align-items: center;
   background: #fff;
@@ -857,6 +871,11 @@ h3 {
   margin-bottom: 28px;
 }
 
+.catalog-heading .subbrand-logo {
+  margin: 0 auto 18px;
+  width: min(250px, 28vw);
+}
+
 .catalog-intro {
   display: grid;
   gap: 14px;
@@ -1147,6 +1166,12 @@ h3 {
 .catalog-hero-content {
   color: #fff;
   max-width: 760px;
+}
+
+.catalog-hero .subbrand-logo {
+  filter: brightness(0) invert(1);
+  margin: 0 auto 22px;
+  width: min(300px, 34vw);
 }
 
 .catalog-hero .catalog-hero-content {
@@ -2378,6 +2403,10 @@ h3 {
     width: min(190px, 36vw);
   }
 
+  .brand-logo-subbrand {
+    width: min(230px, 48vw);
+  }
+
   .menu-toggle {
     display: block;
   }
@@ -2827,6 +2856,10 @@ h3 {
 
   .brand-logo {
     width: min(170px, 42vw);
+  }
+
+  .brand-logo-subbrand {
+    width: min(210px, 58vw);
   }
 
   .hero {
