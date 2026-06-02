@@ -1140,7 +1140,7 @@ h3 {
 .catalog-hero {
   align-items: center;
   background:
-    linear-gradient(90deg, rgba(26, 8, 12, 0.84), rgba(26, 8, 12, 0.56)),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.6)),
     url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2200&q=82") center / cover;
   display: flex;
   justify-content: center;
@@ -1230,7 +1230,6 @@ h3 {
 }
 
 .catalog-hero .subbrand-logo {
-  filter: brightness(0) invert(1);
   margin: 0 auto 22px;
   width: min(150px, 16vw);
 }
