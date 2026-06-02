@@ -20,6 +20,7 @@ const galleryTitle = document.querySelector("[data-gallery-title]");
 const galleryDescription = document.querySelector("[data-gallery-description]");
 let lastProductTrigger = null;
 let activeProductCard = null;
+const isCatalogPage = document.body?.classList.contains("catalog-page");
 
 const galleryCollections = {
   residenciais: {
@@ -291,7 +292,43 @@ const closeProductModal = () => {
   lastProductTrigger?.focus();
 };
 
-if (productModal) {
+const openProductWhatsApp = (card) => {
+  if (!card) return;
+
+  const title = card.querySelector("h3");
+  const productName = title ? title.textContent.trim() : "esta peca";
+  const message = `Ola, gostaria de saber mais sobre ${productName} da mab.llar.`;
+  window.open(`https://wa.me/5584991212716?text=${encodeURIComponent(message)}`, "_blank", "noopener");
+};
+
+if (isCatalogPage) {
+  productOpenButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      const card = button.closest("[data-product-card]");
+      openProductWhatsApp(card);
+    });
+  });
+
+  document.querySelectorAll("[data-product-card] .product-media").forEach((media) => {
+    media.setAttribute("role", "link");
+    media.setAttribute("tabindex", "0");
+
+    media.addEventListener("click", () => {
+      const card = media.closest("[data-product-card]");
+      openProductWhatsApp(card);
+    });
+
+    media.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      const card = media.closest("[data-product-card]");
+      openProductWhatsApp(card);
+    });
+  });
+}
+
+if (productModal && !isCatalogPage) {
   const createStageMedia = (item) => {
     if (!productModalStage) return;
 
