@@ -1097,6 +1097,11 @@ h3 {
 }
 
 .catalog-page {
+  --wine: #111111;
+  --wine-dark: #000000;
+  --gold: #5A0F1C;
+  --gold-soft: #7a1a29;
+  --line: rgba(17, 17, 17, 0.14);
   background: var(--paper);
 }
 
