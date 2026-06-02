@@ -95,11 +95,11 @@ a {
   display: block;
   height: auto;
   object-fit: contain;
-  width: min(96px, 10vw);
+  width: min(84px, 9vw);
 }
 
 .brand-logo-subbrand {
-  width: min(156px, 17vw);
+  width: min(138px, 15vw);
 }
 
 .brand-logo-on-dark {
@@ -897,7 +897,7 @@ h3 {
 
 .catalog-heading .subbrand-logo {
   margin: 0 auto 18px;
-  width: min(142px, 15vw);
+  width: min(126px, 13vw);
 }
 
 .catalog-intro {
@@ -1195,7 +1195,7 @@ h3 {
 .catalog-hero .subbrand-logo {
   filter: brightness(0) invert(1);
   margin: 0 auto 22px;
-  width: min(168px, 18vw);
+  width: min(150px, 16vw);
 }
 
 .catalog-hero .catalog-hero-content {
@@ -2424,11 +2424,11 @@ h3 {
   }
 
   .brand-logo {
-    width: min(84px, 22vw);
+    width: min(76px, 19vw);
   }
 
   .brand-logo-subbrand {
-    width: min(142px, 30vw);
+    width: min(128px, 27vw);
   }
 
   .brand--bll {
@@ -2892,11 +2892,11 @@ h3 {
   }
 
   .brand-logo {
-    width: min(76px, 26vw);
+    width: min(68px, 23vw);
   }
 
   .brand-logo-subbrand {
-    width: min(126px, 36vw);
+    width: min(114px, 32vw);
   }
 
   .brand--bll .brand-mark {
