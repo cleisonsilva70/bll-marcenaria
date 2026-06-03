@@ -2047,6 +2047,55 @@ h3 {
   padding-inline: 34px;
 }
 
+.location-section {
+  align-items: stretch;
+  background: #fff;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: minmax(260px, 0.82fr) minmax(0, 1.18fr);
+}
+
+.location-copy {
+  align-items: flex-start;
+  background: var(--soft);
+  border: 1px solid rgba(90, 15, 28, 0.08);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(28px, 4vw, 44px);
+}
+
+.location-copy h2 {
+  color: var(--wine);
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.06;
+  margin-bottom: 14px;
+  max-width: 11ch;
+}
+
+.location-copy p {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.location-map {
+  border-radius: 16px;
+  box-shadow: 0 20px 46px rgba(36, 18, 20, 0.12);
+  min-height: 360px;
+  overflow: hidden;
+}
+
+.location-map iframe {
+  border: 0;
+  display: block;
+  height: 100%;
+  min-height: 360px;
+  width: 100%;
+}
+
 .final-cta {
   align-items: center;
   display: flex;
@@ -2880,6 +2929,26 @@ h3 {
 
   .product-modal-copy .btn {
     width: 100%;
+  }
+
+  .location-section {
+    gap: 18px;
+    grid-template-columns: 1fr;
+  }
+
+  .location-copy {
+    align-items: center;
+    padding: 30px 22px;
+    text-align: center;
+  }
+
+  .location-copy h2 {
+    max-width: 12ch;
+  }
+
+  .location-map,
+  .location-map iframe {
+    min-height: 320px;
   }
 
   .testimonial-row {
