@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bll-marcenaria.vercel.app/sitemap.xml
