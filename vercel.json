@@ -5,6 +5,26 @@
   "rewrites": [
     {
       "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "mabllar.com"
+        }
+      ],
+      "destination": "/loja.html"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.mabllar.com"
+        }
+      ],
+      "destination": "/loja.html"
+    },
+    {
+      "source": "/",
       "destination": "/index.html"
     },
     {
