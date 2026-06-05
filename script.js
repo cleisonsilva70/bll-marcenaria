@@ -24,7 +24,7 @@ let activeProductCard = null;
 const galleryCollections = {
   residenciais: {
     title: "Projetos residenciais",
-    description: "Ambientes residenciais executados pela BLL com diferentes leituras de uso, composicao e acabamento.",
+    description: "Ambientes residenciais executados pela BLL com diferentes leituras de uso, composição e acabamento.",
     folder: "RESIDENCIAIS",
     files: [
       "1.JPEG",
@@ -43,7 +43,7 @@ const galleryCollections = {
   },
   especiais: {
     title: "Ambientes especiais",
-    description: "Projetos com leitura mais autoral, pensados para destacar identidade, materialidade e experiencia de uso.",
+    description: "Projetos com leitura mais autoral, pensados para destacar identidade, materialidade e experiência de uso.",
     folder: "AMBIENTES ESPECIAIS",
     files: [
       "1.jpg",
@@ -56,7 +56,7 @@ const galleryCollections = {
   },
   corporativos: {
     title: "Ambientes corporativos",
-    description: "Espacos corporativos desenvolvidos para equilibrar imagem profissional, funcionalidade e acabamento.",
+    description: "Espaços corporativos desenvolvidos para equilibrar imagem profissional, funcionalidade e acabamento.",
     folder: "AMBIENTES CORPORATIVOS",
     files: [
       "6.JPEG",
@@ -433,7 +433,7 @@ if (productModal) {
     renderGalleryThumbs(galleryItems);
 
     if (title && productModalAction) {
-      const message = `Ola, tenho interesse na peca ${title.textContent.trim()} da mab.llar e gostaria de receber mais detalhes.`;
+      const message = `Ola, tenho interesse na peça ${title.textContent.trim()} da mab.llar e gostaria de receber mais detalhes.`;
       productModalAction.href = `https://wa.me/5584991212716?text=${encodeURIComponent(message)}`;
     }
 
