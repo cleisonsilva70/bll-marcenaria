@@ -433,7 +433,7 @@ if (productModal) {
     renderGalleryThumbs(galleryItems);
 
     if (title && productModalAction) {
-      const message = `Ola, tenho interesse na peça ${title.textContent.trim()} da mab.llar e gostaria de receber mais detalhes.`;
+      const message = `Olá, tenho interesse na peça ${title.textContent.trim()} da mab.llar e gostaria de receber mais detalhes.`;
       productModalAction.href = `https://wa.me/5584991212716?text=${encodeURIComponent(message)}`;
     }
 
@@ -453,8 +453,21 @@ if (productModal) {
   });
 
   document.querySelectorAll("[data-product-card] .product-media").forEach((media) => {
+    const card = media.closest("[data-product-card]");
+    const title = card?.querySelector("h3")?.textContent.trim();
+
+    media.setAttribute("role", "button");
+    media.setAttribute("tabindex", "0");
+    media.setAttribute("aria-label", title ? `Ver detalhes de ${title}` : "Ver detalhes do produto");
+
     media.addEventListener("click", () => {
-      const card = media.closest("[data-product-card]");
+      if (!card) return;
+      openProductModal(card, card.querySelector("[data-product-open]"));
+    });
+
+    media.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
       if (!card) return;
       openProductModal(card, card.querySelector("[data-product-open]"));
     });

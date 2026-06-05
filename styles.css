@@ -1370,6 +1370,11 @@ h3 {
   position: relative;
 }
 
+.product-media:focus-visible {
+  outline: 2px solid rgba(90, 15, 28, 0.42);
+  outline-offset: -6px;
+}
+
 .product-media::after {
   background: linear-gradient(180deg, rgba(16, 7, 10, 0.03), rgba(16, 7, 10, 0.08) 42%, rgba(16, 7, 10, 0.3));
   content: "";
