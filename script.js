@@ -46,7 +46,7 @@ const galleryCollections = {
     description: "Projetos com leitura mais autoral, pensados para destacar identidade, materialidade e experiencia de uso.",
     folder: "AMBIENTES ESPECIAIS",
     files: [
-      "1.HEIC",
+      "1.jpg",
       "2.JPG",
       "3.JPG",
       "4.JPG",
@@ -72,7 +72,7 @@ const galleryCollections = {
       "3.JPEG",
       "2.JPEG",
       "4.JPEG",
-      "14.HEIC",
+      "14.jpg",
       "1.JPG"
     ]
   }
