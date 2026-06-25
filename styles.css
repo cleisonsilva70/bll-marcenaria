@@ -93,9 +93,9 @@ a {
 
 .brand-logo {
   display: block;
-  height: auto;
+  height: 55px;
   object-fit: contain;
-  width: min(112px, 12vw);
+  width: auto;
 }
 
 .brand-logo-subbrand {
@@ -2536,6 +2536,7 @@ h3 {
   }
 
   .brand-logo {
+    height: auto;
     width: min(92px, 25vw);
   }
 
@@ -3008,6 +3009,7 @@ h3 {
   }
 
   .brand-logo {
+    height: auto;
     width: min(86px, 26vw);
   }
 
