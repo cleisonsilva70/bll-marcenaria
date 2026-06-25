@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://bll-marcenaria.vercel.app/</loc>
+    <loc>https://bllmarcenaria.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://bll-marcenaria.vercel.app/galeria.html?categoria=residenciais</loc>
+    <loc>https://bllmarcenaria.com/galeria.html?categoria=residenciais</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bll-marcenaria.vercel.app/galeria.html?categoria=especiais</loc>
+    <loc>https://bllmarcenaria.com/galeria.html?categoria=especiais</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bll-marcenaria.vercel.app/galeria.html?categoria=corporativos</loc>
+    <loc>https://bllmarcenaria.com/galeria.html?categoria=corporativos</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
