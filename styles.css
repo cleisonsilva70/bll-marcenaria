@@ -3008,11 +3008,11 @@ h3 {
 
   .gallery-grid {
     gap: 12px;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
 
   .gallery-item.is-landscape {
-    grid-column: span 2;
+    grid-column: auto;
   }
 
 }
@@ -3069,11 +3069,11 @@ h3 {
 
   .gallery-grid {
     gap: 10px;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
 
   .gallery-item.is-landscape {
-    grid-column: span 2;
+    grid-column: auto;
   }
 
   .gallery-item img {
