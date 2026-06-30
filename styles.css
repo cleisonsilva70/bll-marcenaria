@@ -1367,112 +1367,23 @@ h3 {
 }
 
 .category-icon {
-  display: block;
+  align-items: center;
+  display: inline-flex;
   height: 76px;
-  position: relative;
+  justify-content: center;
+  transition: transform 0.25s ease;
   width: 116px;
 }
 
-.category-icon::before,
-.category-icon::after {
-  content: "";
-  position: absolute;
-}
-
-.category-icon-tv::before {
-  border: 3px solid #111;
-  height: 22px;
-  left: 22px;
-  top: 10px;
-  width: 70px;
-}
-
-.category-icon-tv::after {
-  border-top: 12px solid #111;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  bottom: 10px;
-  height: 0;
-  left: 18px;
-  width: 80px;
-}
-
-.category-icon-desk::before {
-  background: #111;
-  height: 12px;
-  left: 16px;
-  top: 34px;
-  width: 84px;
-}
-
-.category-icon-desk::after {
-  border-left: 9px solid transparent;
-  border-right: 9px solid transparent;
-  border-top: 32px solid #111;
-  bottom: 4px;
-  height: 0;
-  left: 24px;
-  width: 56px;
-}
-
-.category-icon-drawer::before {
-  background:
-    linear-gradient(#111, #111) 50% 25% / 54px 3px no-repeat,
-    linear-gradient(#111, #111) 50% 50% / 54px 3px no-repeat,
-    linear-gradient(#111, #111) 50% 75% / 54px 3px no-repeat,
-    #111;
-  border-radius: 2px 2px 0 0;
-  clip-path: polygon(20% 0, 80% 0, 96% 100%, 4% 100%);
-  height: 58px;
-  left: 22px;
-  top: 8px;
-  width: 72px;
-}
-
-.category-icon-drawer::after {
-  background: #fff;
-  border-radius: 999px;
-  box-shadow: 0 16px 0 #fff, 0 32px 0 #fff;
-  height: 5px;
-  left: 56px;
-  top: 20px;
-  width: 5px;
-}
-
-.category-icon-nightstand::before {
-  border: 3px solid #111;
-  height: 30px;
-  left: 34px;
-  top: 18px;
-  width: 48px;
-}
-
-.category-icon-nightstand::after {
-  background: #111;
-  bottom: 14px;
-  box-shadow: 42px 0 0 #111;
-  height: 18px;
-  left: 34px;
-  transform: skewX(-15deg);
-  width: 9px;
-}
-
-.category-icon-coffee::before {
-  background: #111;
-  height: 10px;
-  left: 20px;
-  top: 28px;
-  width: 76px;
-}
-
-.category-icon-coffee::after {
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-top: 28px solid #111;
-  bottom: 10px;
-  height: 0;
-  left: 30px;
-  width: 40px;
+.category-svg {
+  display: block;
+  fill: none;
+  height: 100%;
+  stroke: #111;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  width: 100%;
 }
 
 .category-card:hover .category-icon,
