@@ -3001,6 +3001,20 @@ h3 {
     margin-top: 10px;
   }
 
+  .gallery-section {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .gallery-grid {
+    gap: 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gallery-item.is-landscape {
+    grid-column: span 2;
+  }
+
 }
 
 @media (max-width: 420px) {
@@ -3054,12 +3068,12 @@ h3 {
   }
 
   .gallery-grid {
-    gap: 18px;
-    grid-template-columns: 1fr;
+    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .gallery-item.is-landscape {
-    grid-column: auto;
+    grid-column: span 2;
   }
 
   .gallery-item img {
