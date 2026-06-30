@@ -1096,6 +1096,7 @@ h3 {
   --gold: #5A0F1C;
   --gold-soft: #7a1a29;
   --line: rgba(17, 17, 17, 0.14);
+  --store-newsbar-height: 38px;
   background: var(--paper);
 }
 
@@ -1131,6 +1132,70 @@ h3 {
   background: #222;
 }
 
+.store-newsbar {
+  align-items: center;
+  background: #050505;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.78);
+  display: flex;
+  gap: 20px;
+  height: var(--store-newsbar-height);
+  justify-content: space-between;
+  left: 0;
+  padding: 0 clamp(18px, 4vw, 64px);
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 60;
+}
+
+.store-newsbar p {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.store-newsbar-social {
+  align-items: center;
+  display: inline-flex;
+  gap: 10px;
+}
+
+.store-newsbar-social a {
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  color: #fff;
+  display: inline-flex;
+  height: 26px;
+  justify-content: center;
+  transition: background 0.22s ease, border-color 0.22s ease, transform 0.22s ease;
+  width: 26px;
+}
+
+.store-newsbar-social a:hover,
+.store-newsbar-social a:focus-visible {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.42);
+  transform: translateY(-1px);
+}
+
+.store-newsbar-social svg {
+  fill: none;
+  height: 15px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+  width: 15px;
+}
+
+.catalog-page .site-header {
+  top: var(--store-newsbar-height);
+}
+
 .catalog-hero {
   align-items: center;
   background:
@@ -1140,6 +1205,10 @@ h3 {
   justify-content: center;
   min-height: 100vh;
   padding: calc(var(--header-height) + 34px) clamp(22px, 5vw, 76px) 38px;
+}
+
+.catalog-page .catalog-hero {
+  padding-top: calc(var(--header-height) + var(--store-newsbar-height) + 34px);
 }
 
 .gallery-page {
@@ -2812,6 +2881,19 @@ h3 {
     margin-inline: auto;
   }
 
+  .store-newsbar {
+    padding-inline: 14px;
+  }
+
+  .store-newsbar p {
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    max-width: calc(100vw - 112px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
   .catalog-categories {
     padding: 36px 0 30px;
   }
@@ -3020,6 +3102,10 @@ h3 {
   .catalog-hero {
     min-height: 100vh;
     padding: calc(var(--header-height) + 22px) 22px 26px;
+  }
+
+  .catalog-page .catalog-hero {
+    padding-top: calc(var(--header-height) + var(--store-newsbar-height) + 22px);
   }
 
   .catalog-hero-content {
