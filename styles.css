@@ -3008,7 +3008,8 @@ h3 {
 
   .gallery-grid {
     gap: 12px;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 120px);
+    justify-content: center;
   }
 
   .gallery-item.is-landscape {
@@ -3069,7 +3070,8 @@ h3 {
 
   .gallery-grid {
     gap: 10px;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 120px);
+    justify-content: center;
   }
 
   .gallery-item.is-landscape {
