@@ -132,10 +132,61 @@ if (galleryGrid && galleryTitle && galleryDescription) {
   galleryGrid.innerHTML = "";
 
   const orderedFiles = [...category.files].sort(galleryFileCollator.compare);
+  const lightbox = document.createElement("div");
+  lightbox.className = "gallery-lightbox";
+  lightbox.hidden = true;
+  lightbox.innerHTML = `
+    <button class="gallery-lightbox-close" type="button" aria-label="Fechar imagem">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <img class="gallery-lightbox-image" alt="">
+  `;
+  document.body.appendChild(lightbox);
+
+  const lightboxImage = lightbox.querySelector(".gallery-lightbox-image");
+  const lightboxClose = lightbox.querySelector(".gallery-lightbox-close");
+  let lastGalleryTrigger = null;
+
+  const closeGalleryLightbox = () => {
+    lightbox.hidden = true;
+    if (lightboxImage) {
+      lightboxImage.src = "";
+      lightboxImage.alt = "";
+    }
+    document.body.classList.remove("modal-open");
+    lastGalleryTrigger?.focus();
+  };
+
+  const openGalleryLightbox = (image, trigger) => {
+    if (!lightboxImage) return;
+
+    lightboxImage.src = image.currentSrc || image.src;
+    lightboxImage.alt = image.alt || "";
+    lastGalleryTrigger = trigger;
+    lightbox.hidden = false;
+    document.body.classList.add("modal-open");
+    lightboxClose?.focus();
+  };
+
+  lightboxClose?.addEventListener("click", closeGalleryLightbox);
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+      closeGalleryLightbox();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !lightbox.hidden) {
+      closeGalleryLightbox();
+    }
+  });
 
   orderedFiles.forEach((fileName, index) => {
     const figure = document.createElement("figure");
     figure.className = "gallery-item reveal is-visible";
+    figure.setAttribute("role", "button");
+    figure.setAttribute("tabindex", "0");
+    figure.setAttribute("aria-label", `Abrir imagem ${index + 1} em tela cheia`);
 
     const image = document.createElement("img");
     image.src = `assets/IMAGENS/${category.folder}/${encodeURIComponent(fileName)}`;
@@ -145,6 +196,13 @@ if (galleryGrid && galleryTitle && galleryDescription) {
       if (image.naturalWidth > image.naturalHeight * 1.18) {
         figure.classList.add("is-landscape");
       }
+    });
+
+    figure.addEventListener("click", () => openGalleryLightbox(image, figure));
+    figure.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      openGalleryLightbox(image, figure);
     });
 
     figure.append(image);
