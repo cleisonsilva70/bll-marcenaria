@@ -1140,7 +1140,7 @@ h3 {
   display: flex;
   gap: 20px;
   height: var(--store-newsbar-height);
-  justify-content: space-between;
+  justify-content: flex-end;
   left: 0;
   padding: 0 clamp(18px, 4vw, 64px);
   position: fixed;
@@ -1150,11 +1150,16 @@ h3 {
 }
 
 .store-newsbar p {
+  left: 50%;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.06em;
   margin: 0;
+  position: absolute;
+  text-align: center;
   text-transform: uppercase;
+  transform: translateX(-50%);
+  width: min(620px, calc(100vw - 180px));
 }
 
 .store-newsbar-social {
@@ -2888,10 +2893,10 @@ h3 {
   .store-newsbar p {
     font-size: 10px;
     letter-spacing: 0.04em;
-    max-width: calc(100vw - 112px);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    width: calc(100vw - 118px);
   }
 
   .catalog-categories {
