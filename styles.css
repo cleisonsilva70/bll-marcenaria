@@ -714,6 +714,12 @@ h3 {
   scroll-snap-stop: always;
 }
 
+.backstage-gallery a {
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
 .backstage-gallery img {
   height: 100%;
   object-fit: cover;
@@ -1289,6 +1295,18 @@ h3 {
   max-height: 780px;
   object-fit: contain;
   width: 100%;
+}
+
+.gallery-empty {
+  background: #fff;
+  border: 1px solid rgba(90, 15, 28, 0.1);
+  border-radius: 18px;
+  color: var(--muted);
+  font-size: 16px;
+  grid-column: 1 / -1;
+  line-height: 1.6;
+  padding: 34px 24px;
+  text-align: center;
 }
 
 .gallery-lightbox {

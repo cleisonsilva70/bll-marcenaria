@@ -75,6 +75,34 @@ const galleryCollections = {
       "14.jpg",
       "1.JPG"
     ]
+  },
+  corte: {
+    title: "Corte",
+    description: "Registros da etapa de corte e preparação técnica das peças na produção da BLL.",
+    folder: "CORTE",
+    files: [
+      "20260630_151550.jpg",
+      "20260630_151700.jpg",
+      "20260630_151759.jpg"
+    ]
+  },
+  montagem: {
+    title: "Montagem",
+    description: "Registros da etapa de montagem dos projetos da BLL.",
+    folder: "MONTAGEM",
+    files: []
+  },
+  equipe: {
+    title: "Equipe",
+    description: "Registros da equipe envolvida na produção e execução dos projetos.",
+    folder: "EQUIPE",
+    files: []
+  },
+  acabamento: {
+    title: "Acabamento",
+    description: "Registros dos detalhes de acabamento e finalização dos projetos.",
+    folder: "ACABAMENTO",
+    files: []
   }
 };
 
@@ -132,6 +160,13 @@ if (galleryGrid && galleryTitle && galleryDescription) {
   galleryGrid.innerHTML = "";
 
   const orderedFiles = [...category.files].sort(galleryFileCollator.compare);
+  if (!orderedFiles.length) {
+    const emptyState = document.createElement("div");
+    emptyState.className = "gallery-empty";
+    emptyState.textContent = "As fotos desta etapa serão adicionadas em breve.";
+    galleryGrid.appendChild(emptyState);
+  }
+
   const lightbox = document.createElement("div");
   lightbox.className = "gallery-lightbox";
   lightbox.hidden = true;
