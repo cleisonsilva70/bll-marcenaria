@@ -83,7 +83,11 @@ const galleryCollections = {
     files: [
       "20260630_151550.jpg",
       "20260630_151700.jpg",
-      "20260630_151759.jpg"
+      "20260630_151759.jpg",
+      "IMG_2930.jpg",
+      "IMG_7634.jpg",
+      "IMG_7668.jpg",
+      "IMG_7672.jpg"
     ]
   },
   montagem: {
