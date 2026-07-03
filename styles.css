@@ -39,6 +39,10 @@ body.modal-open {
   overflow: hidden;
 }
 
+.bll-page {
+  --bll-newsbar-height: 38px;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -78,6 +82,60 @@ a {
 .site-header.is-scrolled {
   background: var(--wine);
   box-shadow: 0 12px 32px rgba(25, 6, 10, 0.22);
+}
+
+.bll-newsbar {
+  align-items: center;
+  background: var(--wine-dark);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  height: var(--bll-newsbar-height);
+  justify-content: flex-end;
+  left: 0;
+  padding: 0 clamp(18px, 4vw, 64px);
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 60;
+}
+
+.bll-newsbar-social {
+  align-items: center;
+  display: inline-flex;
+  gap: 10px;
+}
+
+.bll-newsbar-social a {
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  color: #fff;
+  display: inline-flex;
+  height: 26px;
+  justify-content: center;
+  transition: background 0.22s ease, border-color 0.22s ease, transform 0.22s ease;
+  width: 26px;
+}
+
+.bll-newsbar-social a:hover,
+.bll-newsbar-social a:focus-visible {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.42);
+  transform: translateY(-1px);
+}
+
+.bll-newsbar-social svg {
+  fill: none;
+  height: 15px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+  width: 15px;
+}
+
+.bll-page .site-header {
+  top: var(--bll-newsbar-height);
 }
 
 .brand {
@@ -242,6 +300,10 @@ a {
   object-fit: cover;
   object-position: center center;
   width: 100%;
+}
+
+.bll-page .hero {
+  padding-top: calc(var(--header-height) + var(--bll-newsbar-height));
 }
 
 .hero-overlay {
@@ -2502,6 +2564,10 @@ h3 {
     padding-bottom: 64px;
   }
 
+  .bll-page .hero {
+    padding-top: calc(var(--header-height) + var(--bll-newsbar-height) + 64px);
+  }
+
   .section {
     padding-inline: max(22px, calc((100vw - var(--content-frame)) / 2));
   }
@@ -2824,6 +2890,10 @@ h3 {
     min-height: 100svh;
     padding: var(--header-height) 22px 0;
     text-align: center;
+  }
+
+  .bll-page .hero {
+    padding-top: calc(var(--header-height) + var(--bll-newsbar-height));
   }
 
   .hero-overlay {
