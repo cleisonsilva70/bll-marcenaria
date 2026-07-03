@@ -531,7 +531,7 @@ if (productModal) {
 
     if (title && productModalAction) {
       const message = `Olá, tenho interesse na peça ${title.textContent.trim()} da mab.llar e gostaria de receber mais detalhes.`;
-      productModalAction.href = `https://wa.me/5584991212716?text=${encodeURIComponent(message)}`;
+      productModalAction.href = `https://wa.me/558496716291?text=${encodeURIComponent(message)}`;
     }
 
     lastProductTrigger = triggerButton || card.querySelector("[data-product-open]");
