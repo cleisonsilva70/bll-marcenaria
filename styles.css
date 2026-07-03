@@ -86,13 +86,13 @@ a {
 
 .bll-newsbar {
   align-items: center;
-  background: var(--wine-dark);
+  background: var(--wine);
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   display: flex;
   height: var(--bll-newsbar-height);
   justify-content: flex-end;
   left: 0;
-  padding: 0 clamp(18px, 4vw, 64px);
+  padding: 0 clamp(22px, 4vw, 64px);
   position: fixed;
   right: 0;
   top: 0;
@@ -2558,6 +2558,10 @@ h3 {
     padding-inline: max(22px, calc((100vw - var(--content-frame)) / 2));
   }
 
+  .bll-newsbar {
+    padding-inline: max(22px, calc((100vw - var(--content-frame)) / 2));
+  }
+
   .hero {
     padding-inline: max(22px, calc((100vw - var(--content-frame)) / 2));
     padding-top: calc(var(--header-height) + 64px);
@@ -2811,6 +2815,10 @@ h3 {
 
   .site-header {
     background: var(--wine);
+    padding: 0 18px 0 22px;
+  }
+
+  .bll-newsbar {
     padding: 0 18px 0 22px;
   }
 
