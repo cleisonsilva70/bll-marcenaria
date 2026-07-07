@@ -2,31 +2,47 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": false,
   "trailingSlash": false,
-  "redirects": [
+  "rewrites": [
     {
-      "source": "/",
+      "source": "/sitemap.xml",
       "has": [
         {
           "type": "host",
           "value": "mabllar.com"
         }
       ],
-      "destination": "/loja",
-      "permanent": false
+      "destination": "/sitemap-mabllar.xml"
     },
     {
-      "source": "/",
+      "source": "/sitemap.xml",
       "has": [
         {
           "type": "host",
           "value": "www.mabllar.com"
         }
       ],
-      "destination": "/loja",
-      "permanent": false
-    }
-  ],
-  "rewrites": [
+      "destination": "/sitemap-mabllar.xml"
+    },
+    {
+      "source": "/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "mabllar.com"
+        }
+      ],
+      "destination": "/robots-mabllar.txt"
+    },
+    {
+      "source": "/robots.txt",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.mabllar.com"
+        }
+      ],
+      "destination": "/robots-mabllar.txt"
+    },
     {
       "source": "/",
       "has": [
