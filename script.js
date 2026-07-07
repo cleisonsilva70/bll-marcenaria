@@ -530,8 +530,17 @@ if (productModal) {
     renderGalleryThumbs(galleryItems);
 
     if (title && productModalAction) {
-      const message = `Olá, tenho interesse na peça ${title.textContent.trim()} da mab.llar e gostaria de receber mais detalhes.`;
-      productModalAction.href = `https://wa.me/558496716291?text=${encodeURIComponent(message)}`;
+      const mercadoLivreUrl = card.dataset.mlUrl?.trim();
+      const productName = title.textContent.trim();
+
+      if (mercadoLivreUrl) {
+        productModalAction.href = mercadoLivreUrl;
+        productModalAction.textContent = "Comprar pelo Mercado Livre";
+      } else {
+        const message = `Olá, tenho interesse na peça ${productName} da mab.llar e gostaria de receber mais detalhes.`;
+        productModalAction.href = `https://wa.me/558496716291?text=${encodeURIComponent(message)}`;
+        productModalAction.textContent = "Falar sobre esta peça";
+      }
     }
 
     lastProductTrigger = triggerButton || card.querySelector("[data-product-open]");
