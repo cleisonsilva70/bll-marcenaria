@@ -81,7 +81,7 @@ const galleryCollections = {
     description: "Registros da fabricação, corte, preparação técnica e processos executados dentro da marcenaria.",
     folder: "CORTE",
     files: [
-      "20260630_151550.jpg",
+      "CAPA.jpg",
       "20260630_151700.jpg",
       "20260630_151759.jpg",
       "IMG_2930.jpg",
@@ -101,10 +101,10 @@ const galleryCollections = {
     description: "Registros dos detalhes de acabamento, finalização e cuidado visual das peças.",
     folder: "ACABAMENTO",
     files: [
-      "IMAGEM2.jpg",
+      "CAPA.jpg",
       "IMAGEM3.jpg",
       "IMAGEM4.jpg",
-      "IMG_7672 copiar.jpg"
+      "IMAGEM2.jpg"
     ]
   }
 };
