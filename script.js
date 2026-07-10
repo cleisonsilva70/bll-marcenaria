@@ -76,9 +76,9 @@ const galleryCollections = {
       "1.JPG"
     ]
   },
-  corte: {
-    title: "Corte",
-    description: "Registros da etapa de corte e preparação técnica das peças na produção da BLL.",
+  producao: {
+    title: "Produção",
+    description: "Registros da fabricação, corte, preparação técnica e processos executados dentro da marcenaria.",
     folder: "CORTE",
     files: [
       "20260630_151550.jpg",
@@ -92,21 +92,20 @@ const galleryCollections = {
   },
   montagem: {
     title: "Montagem",
-    description: "Registros da etapa de montagem dos projetos da BLL.",
+    description: "Registros da instalação, encaixes e montagem dos projetos nos ambientes.",
     folder: "MONTAGEM",
-    files: []
-  },
-  equipe: {
-    title: "Equipe",
-    description: "Registros da equipe envolvida na produção e execução dos projetos.",
-    folder: "EQUIPE",
     files: []
   },
   acabamento: {
     title: "Acabamento",
-    description: "Registros dos detalhes de acabamento e finalização dos projetos.",
+    description: "Registros dos detalhes de acabamento, finalização e cuidado visual das peças.",
     folder: "ACABAMENTO",
-    files: []
+    files: [
+      "IMAGEM2.jpg",
+      "IMAGEM3.jpg",
+      "IMAGEM4.jpg",
+      "IMG_7672 copiar.jpg"
+    ]
   }
 };
 
@@ -163,7 +162,9 @@ if (galleryGrid && galleryTitle && galleryDescription) {
 
   galleryGrid.innerHTML = "";
 
-  const orderedFiles = [...category.files].sort(galleryFileCollator.compare);
+  const getGalleryFileName = (file) => (typeof file === "string" ? file : file.name);
+  const getGalleryFolder = (file) => (typeof file === "string" ? category.folder : file.folder);
+  const orderedFiles = [...category.files].sort((a, b) => galleryFileCollator.compare(getGalleryFileName(a), getGalleryFileName(b)));
   if (!orderedFiles.length) {
     const emptyState = document.createElement("div");
     emptyState.className = "gallery-empty";
@@ -220,7 +221,9 @@ if (galleryGrid && galleryTitle && galleryDescription) {
     }
   });
 
-  orderedFiles.forEach((fileName, index) => {
+  orderedFiles.forEach((file, index) => {
+    const fileName = getGalleryFileName(file);
+    const folderName = getGalleryFolder(file);
     const figure = document.createElement("figure");
     figure.className = "gallery-item reveal is-visible";
     figure.setAttribute("role", "button");
@@ -228,7 +231,7 @@ if (galleryGrid && galleryTitle && galleryDescription) {
     figure.setAttribute("aria-label", `Abrir imagem ${index + 1} em tela cheia`);
 
     const image = document.createElement("img");
-    image.src = `assets/IMAGENS/${category.folder}/${encodeURIComponent(fileName)}`;
+    image.src = `assets/IMAGENS/${folderName}/${encodeURIComponent(fileName)}`;
     image.alt = `${category.title} - imagem ${index + 1}`;
     image.loading = index < 4 ? "eager" : "lazy";
     image.addEventListener("load", () => {

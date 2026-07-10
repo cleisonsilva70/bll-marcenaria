@@ -31,8 +31,20 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bllmarcenaria.com/galeria.html?categoria=corte</loc>
-    <lastmod>2026-07-07</lastmod>
+    <loc>https://bllmarcenaria.com/galeria.html?categoria=producao</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bllmarcenaria.com/galeria.html?categoria=montagem</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://bllmarcenaria.com/galeria.html?categoria=acabamento</loc>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
