@@ -94,7 +94,10 @@ const galleryCollections = {
     title: "Montagem",
     description: "Registros da instalação, encaixes e montagem dos projetos nos ambientes.",
     folder: "MONTAGEM",
-    files: []
+    files: [
+      "capa.jpg",
+      "imagem1.jpg"
+    ]
   },
   acabamento: {
     title: "Acabamento",
