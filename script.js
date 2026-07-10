@@ -102,7 +102,7 @@ const galleryCollections = {
     folder: "ACABAMENTO",
     files: [
       "CAPA.jpg",
-      "IMAGEM3.jpg",
+      "capa1.jpg",
       "IMAGEM4.jpg",
       "IMAGEM2.jpg"
     ]
