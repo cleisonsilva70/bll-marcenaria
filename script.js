@@ -96,7 +96,10 @@ const galleryCollections = {
     folder: "MONTAGEM",
     files: [
       "capa.jpg",
-      "imagem1.jpg"
+      "imagem1.jpg",
+      "IMAGEM3.jpg",
+      "IMAGEM4.jpg",
+      "IMAGEM5.jpg"
     ]
   },
   acabamento: {
