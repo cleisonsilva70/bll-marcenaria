@@ -2,74 +2,74 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": false,
   "trailingSlash": false,
-  "rewrites": [
+  "routes": [
     {
-      "source": "/sitemap.xml",
+      "src": "/sitemap.xml",
       "has": [
         {
           "type": "host",
           "value": "mabllar.com"
         }
       ],
-      "destination": "/sitemap-mabllar.xml"
+      "dest": "/sitemap-mabllar.xml"
     },
     {
-      "source": "/sitemap.xml",
+      "src": "/sitemap.xml",
       "has": [
         {
           "type": "host",
           "value": "www.mabllar.com"
         }
       ],
-      "destination": "/sitemap-mabllar.xml"
+      "dest": "/sitemap-mabllar.xml"
     },
     {
-      "source": "/robots.txt",
+      "src": "/robots.txt",
       "has": [
         {
           "type": "host",
           "value": "mabllar.com"
         }
       ],
-      "destination": "/robots-mabllar.txt"
+      "dest": "/robots-mabllar.txt"
     },
     {
-      "source": "/robots.txt",
+      "src": "/robots.txt",
       "has": [
         {
           "type": "host",
           "value": "www.mabllar.com"
         }
       ],
-      "destination": "/robots-mabllar.txt"
+      "dest": "/robots-mabllar.txt"
     },
     {
-      "source": "/",
+      "src": "/",
       "has": [
         {
           "type": "host",
           "value": "mabllar.com"
         }
       ],
-      "destination": "/loja.html"
+      "dest": "/loja.html"
     },
     {
-      "source": "/",
+      "src": "/",
       "has": [
         {
           "type": "host",
           "value": "www.mabllar.com"
         }
       ],
-      "destination": "/loja.html"
+      "dest": "/loja.html"
     },
     {
-      "source": "/",
-      "destination": "/index.html"
+      "src": "/loja",
+      "dest": "/loja.html"
     },
     {
-      "source": "/loja",
-      "destination": "/loja.html"
+      "src": "/",
+      "dest": "/index.html"
     }
   ]
 }
