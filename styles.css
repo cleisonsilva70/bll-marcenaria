@@ -862,13 +862,13 @@ h3 {
 }
 
 .signature {
-  border-left: 4px solid var(--gold);
+  border-left: 4px solid var(--wine);
   margin-top: 34px;
   padding-left: 18px;
 }
 
 .signature strong {
-  color: var(--gold);
+  color: var(--wine);
   display: block;
   font-family: "Epilogue", Arial, sans-serif;
   font-size: 28px;
