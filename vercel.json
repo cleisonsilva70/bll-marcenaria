@@ -44,6 +44,84 @@
       "dest": "/robots-mabllar.txt"
     },
     {
+      "src": "/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "mabllar.com"
+        }
+      ],
+      "status": 308,
+      "headers": {
+        "Location": "/"
+      }
+    },
+    {
+      "src": "/index.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.mabllar.com"
+        }
+      ],
+      "status": 308,
+      "headers": {
+        "Location": "/"
+      }
+    },
+    {
+      "src": "/galeria.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "mabllar.com"
+        }
+      ],
+      "status": 308,
+      "headers": {
+        "Location": "/"
+      }
+    },
+    {
+      "src": "/galeria.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.mabllar.com"
+        }
+      ],
+      "status": 308,
+      "headers": {
+        "Location": "/"
+      }
+    },
+    {
+      "src": "/loja.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "mabllar.com"
+        }
+      ],
+      "status": 308,
+      "headers": {
+        "Location": "/"
+      }
+    },
+    {
+      "src": "/loja.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.mabllar.com"
+        }
+      ],
+      "status": 308,
+      "headers": {
+        "Location": "/"
+      }
+    },
+    {
       "src": "/",
       "has": [
         {
