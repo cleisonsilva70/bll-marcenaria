@@ -34,6 +34,30 @@
       "dest": "/robots-mabllar.txt"
     },
     {
+      "src": "/favicon.ico",
+      "has": [
+        {
+          "type": "host",
+          "value": "mabllar.com"
+        }
+      ],
+      "dest": "/assets/brand/mab-llar-favicon-64.png"
+    },
+    {
+      "src": "/favicon.ico",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.mabllar.com"
+        }
+      ],
+      "dest": "/assets/brand/mab-llar-favicon-64.png"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/assets/brand/favicon-64.png"
+    },
+    {
       "src": "/robots.txt",
       "has": [
         {
