@@ -3077,15 +3077,28 @@ h3 {
   }
 
   .project-card {
-    flex: 0 0 84vw;
-    scroll-snap-align: center;
+    flex: none;
+    scroll-snap-align: initial;
   }
 
   .project-grid {
-    margin-left: -22px;
-    margin-right: -22px;
-    padding-left: 22px;
-    padding-right: 22px;
+    display: grid;
+    gap: 18px;
+    grid-template-columns: 1fr;
+    margin-left: 0;
+    margin-right: 0;
+    overflow: visible;
+    padding: 0;
+    scroll-snap-type: none;
+  }
+
+  .project-media-frame {
+    aspect-ratio: 16 / 11;
+  }
+
+  .project-card h3,
+  .project-card p {
+    display: none;
   }
 
   .backstage,
