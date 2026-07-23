@@ -3,20 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="mab.llar: móveis e peças para compor ambientes com presença, conforto e bom gosto. Fale pelo WhatsApp para saber mais.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://mabllar.com/">
+  <meta name="description" content="mab.llar: catálogo de móveis e peças para compor ambientes com presença, conforto e bom gosto. Veja os produtos e fale pelo WhatsApp.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="mab.llar">
+  <link rel="canonical" href="https://www.mabllar.com/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:title" content="mab.llar | Móveis para compor ambientes">
   <meta property="og:description" content="Conheça peças para completar ambientes com presença, conforto e bom gosto.">
-  <meta property="og:url" content="https://mabllar.com/">
+  <meta property="og:url" content="https://www.mabllar.com/">
   <meta property="og:site_name" content="mab.llar">
-  <meta property="og:image" content="https://mabllar.com/assets/brand/mab-llar-logo-white.png">
+  <meta property="og:image" content="https://www.mabllar.com/assets/brand/mab-llar-logo-white.png">
+  <meta property="og:image:alt" content="Logo da mab.llar">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="mab.llar | Móveis para compor ambientes">
   <meta name="twitter:description" content="Peças para completar ambientes com presença, conforto e bom gosto.">
-  <meta name="twitter:image" content="https://mabllar.com/assets/brand/mab-llar-logo-white.png">
+  <meta name="twitter:image" content="https://www.mabllar.com/assets/brand/mab-llar-logo-white.png">
   <title>mab.llar | Móveis para Compor Ambientes</title>
   <link rel="icon" type="image/png" href="assets/brand/mab-llar-favicon-64.png">
   <link rel="apple-touch-icon" href="assets/brand/mab-llar-icon-192.png">
@@ -31,10 +33,57 @@
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Store",
-      "name": "mab.llar",
-      "url": "https://mabllar.com/",
-      "telephone": "+55 84 9671-6291"
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://www.mabllar.com/#website",
+          "name": "mab.llar",
+          "url": "https://www.mabllar.com/",
+          "inLanguage": "pt-BR",
+          "publisher": {
+            "@id": "https://www.mabllar.com/#store"
+          }
+        },
+        {
+          "@type": "Store",
+          "@id": "https://www.mabllar.com/#store",
+          "name": "mab.llar",
+          "description": "Catálogo de móveis e peças para compor ambientes com presença, conforto e bom gosto.",
+          "url": "https://www.mabllar.com/",
+          "logo": "https://www.mabllar.com/assets/brand/mab-llar-logo-white.png",
+          "image": "https://www.mabllar.com/assets/brand/mab-llar-logo-white.png",
+          "telephone": "+55 84 9671-6291",
+          "sameAs": [
+            "https://instagram.com/mab.llar"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Catálogo mab.llar",
+            "itemListElement": [
+              {
+                "@type": "OfferCatalog",
+                "name": "Racks de TV"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Escrivaninhas"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Gaveteiros"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Mesas de Cabeceira"
+              },
+              {
+                "@type": "OfferCatalog",
+                "name": "Mesas de Centro"
+              }
+            ]
+          }
+        }
+      ]
     }
   </script>
 </head>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mabllar.com/sitemap.xml
+Sitemap: https://www.mabllar.com/sitemap.xml

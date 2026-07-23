@@ -3,20 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="BLL Marcenaria: ambientes planejados de alto padrão, projetos autorais, execução precisa e acabamento para quem valoriza cada detalhe.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://bllmarcenaria.com/">
+  <meta name="description" content="BLL Marcenaria: ambientes planejados de alto padrão, marcenaria artesanal e industrial, projetos autorais e acabamento premium.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="BLL Marcenaria">
+  <link rel="canonical" href="https://www.bllmarcenaria.com/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:title" content="BLL Marcenaria | Ambientes Planejados de Alto Padrão">
-  <meta property="og:description" content="Ambientes planejados com projeto autoral, execução precisa e acabamento para residências, ambientes especiais e corporativos.">
-  <meta property="og:url" content="https://bllmarcenaria.com/">
+  <meta property="og:description" content="Ambientes planejados com projeto autoral, execução precisa e acabamento premium para residências, ambientes especiais e corporativos.">
+  <meta property="og:url" content="https://www.bllmarcenaria.com/">
   <meta property="og:site_name" content="BLL Marcenaria">
-  <meta property="og:image" content="https://bllmarcenaria.com/assets/IMAGENS/BANNER/4.JPEG">
+  <meta property="og:image" content="https://www.bllmarcenaria.com/assets/IMAGENS/BANNER/4.JPEG">
+  <meta property="og:image:alt" content="Ambiente planejado de alto padrão executado pela BLL Marcenaria">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="BLL Marcenaria | Ambientes Planejados de Alto Padrão">
   <meta name="twitter:description" content="Projetos sob medida com desenho autoral, precisão e acabamento de alto nível.">
-  <meta name="twitter:image" content="https://bllmarcenaria.com/assets/IMAGENS/BANNER/4.JPEG">
+  <meta name="twitter:image" content="https://www.bllmarcenaria.com/assets/IMAGENS/BANNER/4.JPEG">
   <title>BLL Marcenaria | Ambientes Planejados de Alto Padrão</title>
   <link rel="icon" type="image/png" href="assets/brand/favicon-64.png">
   <link rel="apple-touch-icon" href="assets/brand/icon-192.png">
@@ -31,19 +33,79 @@
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "BLL Marcenaria",
-      "url": "https://bllmarcenaria.com/",
-      "email": "marcenariabll@outlook.com",
-      "telephone": "+55 84 99121-2716",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Rua José Edilson Batista, 939",
-        "addressCountry": "BR"
-      },
-      "openingHours": "Mo-Fr 07:30-17:30",
-      "sameAs": [
-        "https://instagram.com/bllmarcenaria"
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://www.bllmarcenaria.com/#website",
+          "name": "BLL Marcenaria",
+          "url": "https://www.bllmarcenaria.com/",
+          "inLanguage": "pt-BR",
+          "publisher": {
+            "@id": "https://www.bllmarcenaria.com/#business"
+          }
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://www.bllmarcenaria.com/#business",
+          "name": "BLL Marcenaria",
+          "description": "Marcenaria especializada em ambientes planejados de alto padrão, projetos autorais, execução de alta complexidade e acabamento premium.",
+          "url": "https://www.bllmarcenaria.com/",
+          "logo": "https://www.bllmarcenaria.com/assets/brand/logo-white.png",
+          "image": "https://www.bllmarcenaria.com/assets/IMAGENS/BANNER/4.JPEG",
+          "email": "marcenariabll@outlook.com",
+          "telephone": "+55 84 99121-2716",
+          "foundingDate": "2012",
+          "founder": {
+            "@type": "Person",
+            "name": "Bruno"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rua José Edilson Batista, 939",
+            "addressCountry": "BR"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "07:30",
+              "closes": "17:30"
+            }
+          ],
+          "areaServed": "Brasil",
+          "sameAs": [
+            "https://instagram.com/bllmarcenaria"
+          ],
+          "makesOffer": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Ambientes planejados de alto padrão"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Projetos residenciais, corporativos e ambientes especiais"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Marcenaria artesanal e industrial"
+              }
+            }
+          ]
+        }
       ]
     }
   </script>

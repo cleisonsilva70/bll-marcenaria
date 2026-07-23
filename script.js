@@ -25,6 +25,8 @@ const galleryCollections = {
   residenciais: {
     title: "Projetos residenciais",
     description: "Ambientes residenciais executados pela BLL com diferentes leituras de uso, composição e acabamento.",
+    seoTitle: "Projetos Residenciais | BLL Marcenaria",
+    image: "assets/IMAGENS/RESIDENCIAIS/1.JPEG",
     folder: "RESIDENCIAIS",
     files: [
       "1.JPEG",
@@ -44,6 +46,8 @@ const galleryCollections = {
   especiais: {
     title: "Ambientes especiais",
     description: "Projetos com leitura mais autoral, pensados para destacar identidade, materialidade e experiência de uso.",
+    seoTitle: "Ambientes Especiais | BLL Marcenaria",
+    image: "assets/IMAGENS/AMBIENTES ESPECIAIS/2.JPG",
     folder: "AMBIENTES ESPECIAIS",
     files: [
       "1.jpg",
@@ -57,6 +61,8 @@ const galleryCollections = {
   corporativos: {
     title: "Ambientes corporativos",
     description: "Espaços corporativos desenvolvidos para equilibrar imagem profissional, funcionalidade e acabamento.",
+    seoTitle: "Ambientes Corporativos | BLL Marcenaria",
+    image: "assets/IMAGENS/AMBIENTES CORPORATIVOS/1.JPG",
     folder: "AMBIENTES CORPORATIVOS",
     files: [
       "6.JPEG",
@@ -79,6 +85,8 @@ const galleryCollections = {
   producao: {
     title: "Produção",
     description: "Registros da fabricação, corte, preparação técnica e processos executados dentro da marcenaria.",
+    seoTitle: "Produção da Marcenaria | BLL Marcenaria",
+    image: "assets/IMAGENS/CORTE/CAPA.jpg",
     folder: "CORTE",
     files: [
       "CAPA.jpg",
@@ -93,6 +101,8 @@ const galleryCollections = {
   montagem: {
     title: "Montagem",
     description: "Registros da instalação, encaixes e montagem dos projetos nos ambientes.",
+    seoTitle: "Montagem de Projetos | BLL Marcenaria",
+    image: "assets/IMAGENS/MONTAGEM/capa.jpg",
     folder: "MONTAGEM",
     files: [
       "capa.jpg",
@@ -105,6 +115,8 @@ const galleryCollections = {
   acabamento: {
     title: "Acabamento",
     description: "Registros dos detalhes de acabamento, finalização e cuidado visual das peças.",
+    seoTitle: "Acabamento em Marcenaria | BLL Marcenaria",
+    image: "assets/IMAGENS/ACABAMENTO/CAPA.jpg",
     folder: "ACABAMENTO",
     files: [
       "CAPA.jpg",
@@ -128,6 +140,22 @@ const staggerGroups = [
   ".testimonial-row",
   ".horizontal-mobile"
 ];
+
+const absoluteSiteUrl = (path) => new URL(path, "https://www.bllmarcenaria.com/").href;
+
+const setMetaContent = (selector, content) => {
+  const element = document.querySelector(selector);
+  if (element && content) {
+    element.setAttribute("content", content);
+  }
+};
+
+const setCanonicalUrl = (url) => {
+  const canonical = document.querySelector("link[rel='canonical']");
+  if (canonical && url) {
+    canonical.setAttribute("href", url);
+  }
+};
 
 const updateHeader = () => {
   if (!header) return;
@@ -162,9 +190,23 @@ if (galleryGrid && galleryTitle && galleryDescription) {
   const params = new URLSearchParams(window.location.search);
   const categoryKey = params.get("categoria") || "residenciais";
   const category = galleryCollections[categoryKey] || galleryCollections.residenciais;
+  const categoryUrl = absoluteSiteUrl(`galeria.html?categoria=${encodeURIComponent(categoryKey)}`);
+  const categoryImageUrl = absoluteSiteUrl(category.image);
+  const categorySeoTitle = category.seoTitle || `${category.title} | BLL Marcenaria`;
 
   galleryTitle.textContent = category.title;
   galleryDescription.textContent = category.description;
+  document.title = categorySeoTitle;
+  setCanonicalUrl(categoryUrl);
+  setMetaContent("meta[name='description']", category.description);
+  setMetaContent("meta[property='og:title']", categorySeoTitle);
+  setMetaContent("meta[property='og:description']", category.description);
+  setMetaContent("meta[property='og:url']", categoryUrl);
+  setMetaContent("meta[property='og:image']", categoryImageUrl);
+  setMetaContent("meta[property='og:image:alt']", `${category.title} da BLL Marcenaria`);
+  setMetaContent("meta[name='twitter:title']", categorySeoTitle);
+  setMetaContent("meta[name='twitter:description']", category.description);
+  setMetaContent("meta[name='twitter:image']", categoryImageUrl);
 
   galleryGrid.innerHTML = "";
 
