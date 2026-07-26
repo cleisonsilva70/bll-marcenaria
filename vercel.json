@@ -4,6 +4,32 @@
   "trailingSlash": false,
   "routes": [
     {
+      "src": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "mabllar.com"
+        }
+      ],
+      "status": 302,
+      "headers": {
+        "Location": "https://www.bllmarcenaria.com/"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.mabllar.com"
+        }
+      ],
+      "status": 302,
+      "headers": {
+        "Location": "https://www.bllmarcenaria.com/"
+      }
+    },
+    {
       "src": "/sitemap.xml",
       "has": [
         {
