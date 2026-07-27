@@ -885,6 +885,21 @@ h3 {
   text-transform: uppercase;
 }
 
+.team-photo {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.team-photo img {
+  aspect-ratio: 16 / 7;
+  border-radius: 12px;
+  box-shadow: 0 28px 64px rgba(36, 18, 20, 0.12);
+  filter: saturate(0.95);
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
 .differentials {
   background: #fff;
 }
@@ -3152,6 +3167,10 @@ h3 {
 
   .founder-photo img {
     aspect-ratio: 1 / 1.08;
+  }
+
+  .team-photo img {
+    aspect-ratio: 4 / 3;
   }
 
   .differential-grid,

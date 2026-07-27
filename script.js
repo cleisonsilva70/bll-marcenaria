@@ -93,7 +93,6 @@ const galleryCollections = {
       "20260630_151700.jpg",
       "20260630_151759.jpg",
       "IMG_2930.jpg",
-      "IMG_7634.jpg",
       "IMG_7668.jpg",
       "IMG_7672.jpg"
     ]
@@ -106,7 +105,6 @@ const galleryCollections = {
     folder: "MONTAGEM",
     files: [
       "capa.jpg",
-      "imagem1.jpg",
       "IMAGEM3.jpg",
       "IMAGEM4.jpg",
       "IMAGEM5.jpg"
