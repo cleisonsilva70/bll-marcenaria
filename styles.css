@@ -891,11 +891,11 @@ h3 {
 }
 
 .team-photo img {
-  aspect-ratio: 16 / 7;
   border-radius: 12px;
   box-shadow: 0 28px 64px rgba(36, 18, 20, 0.12);
   filter: saturate(0.95);
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   object-position: center;
   width: 100%;
 }
@@ -3167,10 +3167,6 @@ h3 {
 
   .founder-photo img {
     aspect-ratio: 1 / 1.08;
-  }
-
-  .team-photo img {
-    aspect-ratio: 4 / 3;
   }
 
   .differential-grid,
