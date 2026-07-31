@@ -119,9 +119,11 @@ const galleryCollections = {
     folder: "ACABAMENTO",
     files: [
       "CAPA.jpg",
-      "capa1.jpg",
-      "IMAGEM4.jpg",
-      "IMAGEM2.jpg"
+      "2.jpg",
+      "3.jpg",
+      "4.jpg",
+      "5.jpg",
+      "6.jpg"
     ]
   }
 };
