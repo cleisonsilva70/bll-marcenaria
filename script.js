@@ -86,15 +86,16 @@ const galleryCollections = {
     title: "Produção",
     description: "Registros da fabricação, corte, preparação técnica e processos executados dentro da marcenaria.",
     seoTitle: "Produção da Marcenaria | BLL Marcenaria",
-    image: "assets/IMAGENS/CORTE/CAPA.jpg",
+    image: "assets/IMAGENS/CORTE/1.jpg",
     folder: "CORTE",
     files: [
-      "CAPA.jpg",
-      "20260630_151700.jpg",
-      "20260630_151759.jpg",
-      "IMG_2930.jpg",
-      "IMG_7668.jpg",
-      "IMG_7672.jpg"
+      "1.jpg",
+      "2.jpg",
+      "3.jpg",
+      "4.jpg",
+      "5.jpg",
+      "6.jpg",
+      "7.jpg"
     ]
   },
   montagem: {
