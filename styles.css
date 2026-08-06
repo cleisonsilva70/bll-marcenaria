@@ -2125,15 +2125,16 @@ h3 {
   display: flex;
   grid-column: 2;
   grid-row: 1;
-  min-height: min(680px, calc(100svh - var(--header-height) - var(--store-newsbar-height) - 118px));
+  justify-content: center;
+  min-height: 0;
   overflow: hidden;
-  padding: clamp(10px, 2vw, 22px);
+  padding: clamp(8px, 1.4vw, 16px);
 }
 
 .product-detail-stage img {
   display: block;
-  height: 100%;
-  max-height: min(640px, calc(100svh - var(--header-height) - var(--store-newsbar-height) - 158px));
+  height: auto;
+  max-height: calc(100svh - var(--header-height) - var(--store-newsbar-height) - 122px);
   object-fit: contain;
   width: 100%;
 }
