@@ -16,6 +16,10 @@ const productModalDescription = document.querySelector("[data-product-modal-desc
 const productModalVariations = document.querySelector("[data-product-modal-variations]");
 const productModalClose = document.querySelectorAll("[data-product-close]");
 const productModalAction = productModal?.querySelector(".btn.btn-primary");
+const productPageStage = document.querySelector("[data-product-page-stage]");
+const productPageThumbs = document.querySelectorAll("[data-product-page-thumb]");
+const productPageVariations = document.querySelectorAll("[data-product-page-variation]");
+const productPageAction = document.querySelector("[data-product-page-action]");
 const galleryGrid = document.querySelector("[data-gallery-grid]");
 const galleryTitle = document.querySelector("[data-gallery-title]");
 const galleryDescription = document.querySelector("[data-gallery-description]");
@@ -674,6 +678,12 @@ if (productModal) {
     button.addEventListener("click", () => {
       const card = button.closest("[data-product-card]");
       if (!card) return;
+      const productUrl = card.dataset.productUrl?.trim();
+      if (productUrl) {
+        window.location.href = productUrl;
+        return;
+      }
+
       openProductModal(card, button);
     });
   });
@@ -688,6 +698,12 @@ if (productModal) {
 
     media.addEventListener("click", () => {
       if (!card) return;
+      const productUrl = card.dataset.productUrl?.trim();
+      if (productUrl) {
+        window.location.href = productUrl;
+        return;
+      }
+
       openProductModal(card, card.querySelector("[data-product-open]"));
     });
 
@@ -695,6 +711,12 @@ if (productModal) {
       if (event.key !== "Enter" && event.key !== " ") return;
       event.preventDefault();
       if (!card) return;
+      const productUrl = card.dataset.productUrl?.trim();
+      if (productUrl) {
+        window.location.href = productUrl;
+        return;
+      }
+
       openProductModal(card, card.querySelector("[data-product-open]"));
     });
   });
@@ -707,5 +729,40 @@ if (productModal) {
     if (event.key === "Escape" && !productModal.hidden) {
       closeProductModal();
     }
+  });
+}
+
+if (productPageStage && productPageThumbs.length) {
+  productPageThumbs.forEach((thumb) => {
+    thumb.addEventListener("click", () => {
+      const src = thumb.dataset.src;
+      if (!src) return;
+
+      productPageStage.src = src;
+      productPageStage.alt = thumb.dataset.alt || "";
+
+      productPageThumbs.forEach((item) => {
+        const isActive = item === thumb;
+        item.classList.toggle("is-active", isActive);
+        item.setAttribute("aria-pressed", String(isActive));
+      });
+    });
+  });
+}
+
+if (productPageAction && productPageVariations.length) {
+  productPageVariations.forEach((variation) => {
+    variation.addEventListener("click", () => {
+      const url = variation.dataset.url;
+      if (!url) return;
+
+      productPageAction.href = url;
+
+      productPageVariations.forEach((item) => {
+        const isActive = item === variation;
+        item.classList.toggle("is-active", isActive);
+        item.setAttribute("aria-pressed", String(isActive));
+      });
+    });
   });
 }
