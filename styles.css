@@ -1177,6 +1177,9 @@ h3 {
   --gold: #5A0F1C;
   --gold-soft: #7a1a29;
   --line: rgba(17, 17, 17, 0.14);
+  --paper: #ffffff;
+  --soft: #f6f6f6;
+  --surface: #ffffff;
   --store-newsbar-height: 38px;
   background: var(--paper);
 }
@@ -1898,7 +1901,7 @@ h3 {
 }
 
 .product-modal-image-wrap {
-  background: #f5f1ee;
+  background: #f6f6f6;
   display: flex;
   flex-direction: column;
   gap: 14px;
