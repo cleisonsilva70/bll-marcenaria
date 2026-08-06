@@ -751,18 +751,12 @@ if (productPageStage && productPageThumbs.length) {
 }
 
 if (productPageAction && productPageVariations.length) {
-  const productPageVariationLabel = document.querySelector("[data-product-page-variation-label]");
-
   productPageVariations.forEach((variation) => {
     variation.addEventListener("click", () => {
       const url = variation.dataset.url;
       if (!url) return;
 
       productPageAction.href = url;
-
-      if (productPageVariationLabel) {
-        productPageVariationLabel.textContent = variation.textContent.trim();
-      }
 
       productPageVariations.forEach((item) => {
         const isActive = item === variation;
