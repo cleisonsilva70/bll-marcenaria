@@ -5,17 +5,6 @@ const revealItems = document.querySelectorAll(".reveal");
 const autoCarousels = document.querySelectorAll("[data-auto-carousel]");
 const partnerLogos = document.querySelectorAll(".partner-logo");
 const parallaxCards = document.querySelectorAll("[data-parallax-card]");
-const productOpenButtons = document.querySelectorAll("[data-product-open]");
-const productModal = document.querySelector("[data-product-modal]");
-const productModalStage = document.querySelector("[data-product-modal-stage]");
-const productModalThumbs = document.querySelector("[data-product-modal-thumbs]");
-const productModalTitle = document.querySelector("[data-product-modal-title]");
-const productModalSummary = document.querySelector("[data-product-modal-summary]");
-const productModalSpecs = document.querySelector("[data-product-modal-specs]");
-const productModalDescription = document.querySelector("[data-product-modal-description]");
-const productModalVariations = document.querySelector("[data-product-modal-variations]");
-const productModalClose = document.querySelectorAll("[data-product-close]");
-const productModalAction = productModal?.querySelector(".btn.btn-primary");
 const productPageStage = document.querySelector("[data-product-page-stage]");
 const productPageThumbs = document.querySelectorAll("[data-product-page-thumb]");
 const productPageVariations = document.querySelectorAll("[data-product-page-variation]");
@@ -23,8 +12,6 @@ const productPageAction = document.querySelector("[data-product-page-action]");
 const galleryGrid = document.querySelector("[data-gallery-grid]");
 const galleryTitle = document.querySelector("[data-gallery-title]");
 const galleryDescription = document.querySelector("[data-gallery-description]");
-let lastProductTrigger = null;
-let activeProductCard = null;
 
 const galleryCollections = {
   residenciais: {
@@ -428,309 +415,28 @@ if (parallaxQuery.matches) {
   });
 }
 
-const closeProductModal = () => {
-  if (!productModal) return;
+// Cards de produto levam direto para a página dedicada do produto
+// (data-product-url). Cada novo produto deve seguir esse mesmo padrão.
+document.querySelectorAll("[data-product-card][data-product-url]").forEach((card) => {
+  const productUrl = card.dataset.productUrl?.trim();
+  const media = card.querySelector(".product-media");
+  if (!productUrl || !media) return;
 
-  productModal.hidden = true;
-
-  if (productModalStage) productModalStage.innerHTML = "";
-  if (productModalThumbs) productModalThumbs.innerHTML = "";
-  if (productModalTitle) productModalTitle.textContent = "";
-  if (productModalSummary) productModalSummary.textContent = "";
-  if (productModalSpecs) productModalSpecs.innerHTML = "";
-  if (productModalDescription) productModalDescription.innerHTML = "";
-  if (productModalVariations) {
-    productModalVariations.innerHTML = "";
-    productModalVariations.hidden = true;
-  }
-
-  document.body.classList.remove("modal-open");
-  activeProductCard = null;
-  lastProductTrigger?.focus();
-};
-
-if (productModal) {
-  const createStageMedia = (item) => {
-    if (!productModalStage) return;
-
-    productModalStage.innerHTML = "";
-    if (!item) return;
-
-    if (item.kind === "video") {
-      const video = document.createElement("video");
-      video.className = "product-modal-media";
-      video.controls = true;
-      video.playsInline = true;
-      video.preload = "metadata";
-      video.poster = item.poster || item.thumb || "";
-      video.src = item.src;
-
-      if (item.alt) {
-        video.setAttribute("aria-label", item.alt);
-      }
-
-      productModalStage.appendChild(video);
-      return;
-    }
-
-    const image = document.createElement("img");
-    image.className = "product-modal-media";
-    image.src = item.src;
-    image.alt = item.alt || "";
-    image.loading = "eager";
-    productModalStage.appendChild(image);
+  const title = card.querySelector("h3")?.textContent.trim();
+  const goToProduct = () => {
+    window.location.href = productUrl;
   };
 
-  const readGalleryItems = (card) => {
-    const items = [];
-    const galleryNodes = card.querySelectorAll(".product-gallery-data [data-kind]");
-
-    galleryNodes.forEach((node) => {
-      const kind = node.dataset.kind || "image";
-      const src = node.dataset.src;
-      if (!src) return;
-
-      items.push({
-        kind,
-        src,
-        thumb: node.dataset.thumb || src,
-        poster: node.dataset.poster || node.dataset.thumb || "",
-        alt: node.dataset.alt || ""
-      });
-    });
-
-    if (items.length) return items;
-
-    const fallbackImage = card.querySelector(".product-media img");
-    if (!fallbackImage) return items;
-
-    items.push({
-      kind: "image",
-      src: fallbackImage.currentSrc || fallbackImage.src,
-      thumb: fallbackImage.currentSrc || fallbackImage.src,
-      alt: fallbackImage.alt || ""
-    });
-
-    return items;
-  };
-
-  const readProductVariations = (card) => {
-    return Array.from(card.querySelectorAll(".product-variation-data [data-url]"))
-      .map((node) => ({
-        label: node.dataset.label || "Variação",
-        url: node.dataset.url || ""
-      }))
-      .filter((variation) => variation.url);
-  };
-
-  const renderGalleryThumbs = (items) => {
-    if (!productModalThumbs) return;
-
-    productModalThumbs.innerHTML = "";
-    if (!items.length) return;
-
-    let activeIndex = 0;
-
-    const setActiveItem = (index) => {
-      activeIndex = index;
-      createStageMedia(items[index]);
-
-      productModalThumbs.querySelectorAll(".product-modal-thumb").forEach((thumb, thumbIndex) => {
-        const isActive = thumbIndex === activeIndex;
-        thumb.classList.toggle("is-active", isActive);
-        thumb.setAttribute("aria-pressed", String(isActive));
-      });
-    };
-
-    items.forEach((item, index) => {
-      const thumb = document.createElement("button");
-      thumb.type = "button";
-      thumb.className = "product-modal-thumb";
-      thumb.setAttribute("aria-label", item.alt || `Midia ${index + 1}`);
-
-      if (item.kind === "video") {
-        thumb.classList.add("is-video");
-      }
-
-      const thumbImage = document.createElement("img");
-      thumbImage.src = item.thumb || item.poster || item.src;
-      thumbImage.alt = "";
-      thumbImage.loading = "lazy";
-      thumb.appendChild(thumbImage);
-
-      if (item.kind === "video") {
-        const badge = document.createElement("span");
-        badge.className = "product-modal-thumb-badge";
-        badge.textContent = "Video";
-        thumb.appendChild(badge);
-      }
-
-      thumb.addEventListener("click", () => setActiveItem(index));
-      productModalThumbs.appendChild(thumb);
-    });
-
-    setActiveItem(0);
-  };
-
-  const renderProductVariations = (variations) => {
-    if (!productModalVariations || !productModalAction) return false;
-
-    productModalVariations.innerHTML = "";
-    productModalVariations.hidden = !variations.length;
-    if (!variations.length) return false;
-
-    const heading = document.createElement("p");
-    heading.className = "product-modal-variation-title";
-    heading.textContent = "Escolha a variação";
-    productModalVariations.appendChild(heading);
-
-    const list = document.createElement("div");
-    list.className = "product-modal-variation-list";
-
-    const setActiveVariation = (selectedButton, variation) => {
-      list.querySelectorAll("button").forEach((button) => {
-        const isActive = button === selectedButton;
-        button.classList.toggle("is-active", isActive);
-        button.setAttribute("aria-pressed", String(isActive));
-      });
-
-      productModalAction.href = variation.url;
-      productModalAction.textContent = "Comprar pelo Mercado Livre";
-    };
-
-    let firstButton = null;
-
-    variations.forEach((variation, index) => {
-      const button = document.createElement("button");
-      button.type = "button";
-      button.className = "product-modal-variation";
-      button.textContent = variation.label;
-      button.setAttribute("aria-pressed", "false");
-      button.addEventListener("click", () => setActiveVariation(button, variation));
-      list.appendChild(button);
-
-      if (index === 0) {
-        firstButton = button;
-      }
-    });
-
-    productModalVariations.appendChild(list);
-    if (firstButton) {
-      setActiveVariation(firstButton, variations[0]);
-    }
-
-    return true;
-  };
-
-  const openProductModal = (card, triggerButton) => {
-    if (activeProductCard === card && !productModal.hidden) return;
-
-    const title = card.querySelector("h3");
-    const summary = card.querySelector(".product-card-body > p");
-    const specs = card.querySelector(".product-specs");
-    const description = card.querySelector(".product-modal-data");
-    const galleryItems = readGalleryItems(card);
-    const variations = readProductVariations(card);
-
-    if (productModalTitle) {
-      productModalTitle.textContent = title ? title.textContent.trim() : "";
-    }
-
-    if (productModalSummary) {
-      productModalSummary.textContent = summary ? summary.textContent.trim() : "";
-    }
-
-    if (productModalSpecs) {
-      productModalSpecs.innerHTML = specs ? specs.innerHTML : "";
-    }
-
-    if (productModalDescription) {
-      productModalDescription.innerHTML = description ? description.innerHTML : "";
-    }
-
-    renderGalleryThumbs(galleryItems);
-
-    if (title && productModalAction) {
-      const mercadoLivreUrl = card.dataset.mlUrl?.trim();
-      const productName = title.textContent.trim();
-      const hasVariations = renderProductVariations(variations);
-
-      if (hasVariations) {
-        productModalAction.textContent = "Comprar pelo Mercado Livre";
-      } else if (mercadoLivreUrl) {
-        productModalAction.href = mercadoLivreUrl;
-        productModalAction.textContent = "Comprar pelo Mercado Livre";
-      } else {
-        const message = `Olá, tenho interesse na peça ${productName} da mab.llar e gostaria de receber mais detalhes.`;
-        productModalAction.href = `https://wa.me/558496716291?text=${encodeURIComponent(message)}`;
-        productModalAction.textContent = "Falar sobre esta peça";
-      }
-    }
-
-    lastProductTrigger = triggerButton || card.querySelector("[data-product-open]");
-    activeProductCard = card;
-    productModal.hidden = false;
-    document.body.classList.add("modal-open");
-    productModal.querySelector(".product-modal-close")?.focus();
-  };
-
-  productOpenButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const card = button.closest("[data-product-card]");
-      if (!card) return;
-      const productUrl = card.dataset.productUrl?.trim();
-      if (productUrl) {
-        window.location.href = productUrl;
-        return;
-      }
-
-      openProductModal(card, button);
-    });
+  media.setAttribute("role", "button");
+  media.setAttribute("tabindex", "0");
+  media.setAttribute("aria-label", title ? `Ver detalhes de ${title}` : "Ver detalhes do produto");
+  media.addEventListener("click", goToProduct);
+  media.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    goToProduct();
   });
-
-  document.querySelectorAll("[data-product-card] .product-media").forEach((media) => {
-    const card = media.closest("[data-product-card]");
-    const title = card?.querySelector("h3")?.textContent.trim();
-
-    media.setAttribute("role", "button");
-    media.setAttribute("tabindex", "0");
-    media.setAttribute("aria-label", title ? `Ver detalhes de ${title}` : "Ver detalhes do produto");
-
-    media.addEventListener("click", () => {
-      if (!card) return;
-      const productUrl = card.dataset.productUrl?.trim();
-      if (productUrl) {
-        window.location.href = productUrl;
-        return;
-      }
-
-      openProductModal(card, card.querySelector("[data-product-open]"));
-    });
-
-    media.addEventListener("keydown", (event) => {
-      if (event.key !== "Enter" && event.key !== " ") return;
-      event.preventDefault();
-      if (!card) return;
-      const productUrl = card.dataset.productUrl?.trim();
-      if (productUrl) {
-        window.location.href = productUrl;
-        return;
-      }
-
-      openProductModal(card, card.querySelector("[data-product-open]"));
-    });
-  });
-
-  productModalClose.forEach((element) => {
-    element.addEventListener("click", closeProductModal);
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && !productModal.hidden) {
-      closeProductModal();
-    }
-  });
-}
+});
 
 if (productPageStage && productPageThumbs.length) {
   productPageThumbs.forEach((thumb) => {
