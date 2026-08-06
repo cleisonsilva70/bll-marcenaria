@@ -13,6 +13,7 @@ const productModalTitle = document.querySelector("[data-product-modal-title]");
 const productModalSummary = document.querySelector("[data-product-modal-summary]");
 const productModalSpecs = document.querySelector("[data-product-modal-specs]");
 const productModalDescription = document.querySelector("[data-product-modal-description]");
+const productModalVariations = document.querySelector("[data-product-modal-variations]");
 const productModalClose = document.querySelectorAll("[data-product-close]");
 const productModalAction = productModal?.querySelector(".btn.btn-primary");
 const galleryGrid = document.querySelector("[data-gallery-grid]");
@@ -434,6 +435,10 @@ const closeProductModal = () => {
   if (productModalSummary) productModalSummary.textContent = "";
   if (productModalSpecs) productModalSpecs.innerHTML = "";
   if (productModalDescription) productModalDescription.innerHTML = "";
+  if (productModalVariations) {
+    productModalVariations.innerHTML = "";
+    productModalVariations.hidden = true;
+  }
 
   document.body.classList.remove("modal-open");
   activeProductCard = null;
@@ -505,6 +510,15 @@ if (productModal) {
     return items;
   };
 
+  const readProductVariations = (card) => {
+    return Array.from(card.querySelectorAll(".product-variation-data [data-url]"))
+      .map((node) => ({
+        label: node.dataset.label || "Variação",
+        url: node.dataset.url || ""
+      }))
+      .filter((variation) => variation.url);
+  };
+
   const renderGalleryThumbs = (items) => {
     if (!productModalThumbs) return;
 
@@ -554,6 +568,56 @@ if (productModal) {
     setActiveItem(0);
   };
 
+  const renderProductVariations = (variations) => {
+    if (!productModalVariations || !productModalAction) return false;
+
+    productModalVariations.innerHTML = "";
+    productModalVariations.hidden = !variations.length;
+    if (!variations.length) return false;
+
+    const heading = document.createElement("p");
+    heading.className = "product-modal-variation-title";
+    heading.textContent = "Escolha a variação";
+    productModalVariations.appendChild(heading);
+
+    const list = document.createElement("div");
+    list.className = "product-modal-variation-list";
+
+    const setActiveVariation = (selectedButton, variation) => {
+      list.querySelectorAll("button").forEach((button) => {
+        const isActive = button === selectedButton;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+
+      productModalAction.href = variation.url;
+      productModalAction.textContent = "Comprar pelo Mercado Livre";
+    };
+
+    let firstButton = null;
+
+    variations.forEach((variation, index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "product-modal-variation";
+      button.textContent = variation.label;
+      button.setAttribute("aria-pressed", "false");
+      button.addEventListener("click", () => setActiveVariation(button, variation));
+      list.appendChild(button);
+
+      if (index === 0) {
+        firstButton = button;
+      }
+    });
+
+    productModalVariations.appendChild(list);
+    if (firstButton) {
+      setActiveVariation(firstButton, variations[0]);
+    }
+
+    return true;
+  };
+
   const openProductModal = (card, triggerButton) => {
     if (activeProductCard === card && !productModal.hidden) return;
 
@@ -562,6 +626,7 @@ if (productModal) {
     const specs = card.querySelector(".product-specs");
     const description = card.querySelector(".product-modal-data");
     const galleryItems = readGalleryItems(card);
+    const variations = readProductVariations(card);
 
     if (productModalTitle) {
       productModalTitle.textContent = title ? title.textContent.trim() : "";
@@ -584,8 +649,11 @@ if (productModal) {
     if (title && productModalAction) {
       const mercadoLivreUrl = card.dataset.mlUrl?.trim();
       const productName = title.textContent.trim();
+      const hasVariations = renderProductVariations(variations);
 
-      if (mercadoLivreUrl) {
+      if (hasVariations) {
+        productModalAction.textContent = "Comprar pelo Mercado Livre";
+      } else if (mercadoLivreUrl) {
         productModalAction.href = mercadoLivreUrl;
         productModalAction.textContent = "Comprar pelo Mercado Livre";
       } else {
