@@ -754,20 +754,23 @@ if (thumbsTrack && thumbsPrev && thumbsNext) {
   });
 }
 
+const setProductPageImage = (src, alt = "", activeThumb = null) => {
+  if (!productPageStage || !src) return;
+
+  productPageStage.src = src;
+  productPageStage.alt = alt;
+
+  productPageThumbs.forEach((item) => {
+    const isActive = activeThumb ? item === activeThumb : item.dataset.src === src;
+    item.classList.toggle("is-active", isActive);
+    item.setAttribute("aria-pressed", String(isActive));
+  });
+};
+
 if (productPageStage && productPageThumbs.length) {
   productPageThumbs.forEach((thumb) => {
     thumb.addEventListener("click", () => {
-      const src = thumb.dataset.src;
-      if (!src) return;
-
-      productPageStage.src = src;
-      productPageStage.alt = thumb.dataset.alt || "";
-
-      productPageThumbs.forEach((item) => {
-        const isActive = item === thumb;
-        item.classList.toggle("is-active", isActive);
-        item.setAttribute("aria-pressed", String(isActive));
-      });
+      setProductPageImage(thumb.dataset.src, thumb.dataset.alt || "", thumb);
     });
   });
 }
@@ -785,6 +788,8 @@ if (productPageAction && productPageVariations.length) {
       if (productPageVariationLabel) {
         productPageVariationLabel.textContent = variation.textContent.trim();
       }
+
+      setProductPageImage(variation.dataset.image, variation.dataset.alt || variation.textContent.trim());
 
       productPageVariations.forEach((item) => {
         const isActive = item === variation;
