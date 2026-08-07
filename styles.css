@@ -2258,6 +2258,7 @@ h3 {
   font-size: clamp(36px, 4.6vw, 58px);
   line-height: 1.02;
   margin-bottom: 18px;
+  text-align: left;
 }
 
 .product-detail-lead {
@@ -2265,6 +2266,7 @@ h3 {
   font-size: 16px;
   line-height: 1.75;
   margin: 0 0 20px;
+  text-align: left;
 }
 
 .product-detail-more {
@@ -2290,6 +2292,7 @@ h3 {
   font-size: 14px;
   line-height: 1.7;
   margin: 0;
+  text-align: left;
 }
 
 .product-detail-more ul {
@@ -2308,6 +2311,7 @@ h3 {
   font-weight: 800;
   letter-spacing: 0.08em;
   margin: 0 0 12px;
+  text-align: left;
   text-transform: uppercase;
 }
 
