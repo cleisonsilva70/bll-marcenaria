@@ -2161,7 +2161,7 @@ h3 {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-height: 520px;
+  max-height: calc((72px * 4) + (10px * 3));
   overflow-y: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
