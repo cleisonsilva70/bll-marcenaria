@@ -1191,7 +1191,6 @@ h3 {
 .catalog-page .product-hover-panel,
 .catalog-page .product-hover-panel span,
 .catalog-page .product-hover-panel small,
-.catalog-page .btn-dark,
 .catalog-page .site-footer,
 .catalog-page .site-footer h3,
 .catalog-page .site-footer a,
@@ -1832,6 +1831,10 @@ h3 {
 .btn-product-secondary {
   border: 1px solid rgba(90, 15, 28, 0.12);
   color: rgba(49, 7, 15, 0.84);
+}
+
+.catalog-page .btn-product-secondary {
+  color: #111;
 }
 
 .btn-product-secondary:hover {
@@ -3151,9 +3154,12 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .store-mini-grid,
-  .product-grid-premium {
+  .store-mini-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-grid-premium {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .store-mini-intro {
