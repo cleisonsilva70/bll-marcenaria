@@ -2224,6 +2224,7 @@ h3 {
   box-shadow: none;
   padding: 8px 0 0;
   position: sticky;
+  text-align: left;
   top: calc(var(--header-height) + var(--store-newsbar-height) + 24px);
 }
 
